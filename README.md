@@ -13,4 +13,4 @@ La découverte des bases du logiciel QGIS est prévue en amont dans le cadre d'u
 - [Chapitre 2](https://ouvrir.passages.cnrs.fr/tutoqgis/02_00_geodesie.php) : géodésie
 - [Chapitre 3](https://ouvrir.passages.cnrs.fr/tutoqgis/03_00_recherche_ajout.php) : recherche et ajout de données
 
-
+NB : les premières versions de ces TD ont été réalisées avec N. Karasiak
