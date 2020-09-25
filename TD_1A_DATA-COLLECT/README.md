@@ -11,9 +11,7 @@ Nous allons enregistrer toutes les données dans un nouveau projet QGIS qui aura
 Sous QGIS : `Projet > Nouveau`.
 
 
-## Choisir le Système de Coordonnées de Référence (SRC)
-
-Par défaut, le SRC d'un projet QGIS est celui du système de référence mondial WGS-84 (celui du système GPS), nom de code **EPSG:4326**. Le système de référence du projet est toujours affiché en bas à droite de la fenêtre de QGIS. Vous devriez avoir le SRC suivant : 
+Par défaut, le Système de Coordonnées de Référence (SRC) d'un projet QGIS est celui du système de référence mondial WGS-84 (celui du système GPS), nom de code **EPSG:4326**. Le système de référence du projet est toujours affiché en bas à droite de la fenêtre de QGIS. Vous devriez avoir le SRC suivant : 
 
 ![SCR actuel dans QGIS : EPSG:4326](figures/EPSG4326.png)
 
@@ -21,12 +19,12 @@ Les informations relatives à ce SRC sont accessibles depuis la barre d'état de
 
 Nous allons changer de SRC pour travailler dans le système de référence officiel de la France métropolitaine : la projection Lambert-93. Nom de code : **EPSG:2154**. Elle est liée au système géodésique RGF93. Les coordonnées sont définies en mètres. Si vous souhaitez en savoir plus sur la projection Lambert, reportez-vous à la [page Wikipedia](https://fr.wikipedia.org/wiki/WGS_84) dédiée.
 
-Dans l'onglet `SCR` de la fenêtre `Propriété du projet`, recherchez `2154` (code EPSG de la projection) via le filtre. Une fois la projection sélectionnée et le changement appliqué, vous pouvez vérifier qu'il est effectif dans la barre d'état du projet (en bas à droite de la fenere QGIS) :
+- Dans l'onglet `SCR` de la fenêtre `Propriété du projet`, recherchez `2154` (code EPSG de la projection) via le filtre. Une fois la projection sélectionnée et le changement appliqué, vous pouvez vérifier qu'il est effectif dans la barre d'état du projet (en bas à droite de la fenêtre QGIS) :
 
 ![SCR actuel dans QGIS : EPSG:2154](figures/EPSG2154.png)
 
-Dans l'onglet `Général` de la fenêtre `Propriété du projet`, donnez un nom (ex. TD_dataCollect). Il apparaîtra à côté du nom de la fenêtre QGIS.
+- Dans l'onglet `Général` de la fenêtre `Propriété du projet`, donnez un nom (ex. TD_dataCollect). Il apparaîtra à côté du nom de la fenêtre QGIS.
 
-Une fois ces manipulations effectuées, sauvegardez votre projet dans votre dossier de travail : `Projet > Enregistrer sous...`
+Sauvegardez à présent votre projet dans votre dossier de travail : `Projet > Enregistrer sous...`
 
 
