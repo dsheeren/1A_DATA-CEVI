@@ -39,7 +39,7 @@ L'IGN a conçu un portail de visualisation de nombreuses sources de données spa
 
 Commencez par rechercher l'EA de Borret. Elle se trouve à Poucharramet en Haute Garonne. Choisissez les photographies aériennes comme fond de carte sur le Geoportail et repérez-vous par rapport à la photo ci-dessous.
 
-![Recherche le siège de l'EA de Borret](figures/Borret.png){height=200px}
+![Recherche le siège de l'EA de Borret](figures/Borret.png){height=150px}
 
 Une fois que l'EA est localisée, sélectionnez l'onglet à droite de l'écran correspondant aux outils, puis `Annoter la carte` et placez votre point (siège de l'EA).
 
