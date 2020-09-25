@@ -1,4 +1,4 @@
-# Objectifs
+# Objectif 
 
 Dans ce TD, vous allez apprendre à collecter des données spatiales provenant de différentes sources. Elles seront utiles pour réaliser le diagnostic de l'environnement naturel autour de votre exploitation agricole (cf. UE "Analyse et Diagnostic d'un agroécosystème"). Nous allons rassembler différentes données au niveau de la petite région agricole (PRA) ainsi qu'au niveau de l'exploitation elle-même (EA).
 
@@ -26,5 +26,57 @@ Nous allons changer de SRC pour travailler dans le système de référence offic
 - Dans l'onglet `Général` de la fenêtre `Propriété du projet`, donnez un nom (ex. TD_dataCollect). Il apparaîtra à côté du nom de la fenêtre QGIS.
 
 Sauvegardez à présent votre projet dans votre dossier de travail : `Projet > Enregistrer sous...`
+
+
+# Localiser votre EA
+
+Nous allons représenter le siège de l'EA de Borret sous forme de point en utilisant le Geoportail de l'IGN.
+
+
+**Méthode 1 : Export du lieu depuis le Geoportail**
+
+L'IGN a conçu un portail de visualisation de nombreuses sources de données spatiales avec quelques fonctionnalités de localisation : [www.geoportail.gouv.fr/](https://www.geoportail.gouv.fr/)
+
+Commencez par rechercher l'EA de Borret. Elle se trouve à Poucharramet en Haute Garonne. Choisissez les photographies aériennes comme fond de carte sur le Geoportail et repérez-vous par rapport à la photo ci-dessous.
+
+![Recherche le siège de l'EA de Borret](figures/Borret.png){height=200px}
+
+Une fois que l'EA est localisée, sélectionnez l'onglet à droite de l'écran correspondant aux outils, puis `Annoter la carte` et placez votre point (siège de l'EA).
+
+![Annoter la carte pour créer le point de votre exploitation](figures/geoportail_annoter.png){height=150px}
+
+![Placez votre point et exportez le résultat](figures/geoportail_ajoutpoint.png){height=150px}
+
+Votre point peut être exporté au format `kml` (depuis le menu `Annoter la carte`). Par défaut, le SRC associé aux objets est le WGS-84 (EPSG:4326). Après import sous QGIS, il faudra veiller à convertir le système pour être cohérent avec celui du projet (EPSG:2154). Nous le verrons par la suite lors de l'import.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
