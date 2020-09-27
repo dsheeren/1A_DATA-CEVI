@@ -164,22 +164,23 @@ Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/A
 Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sélectionner que les communes de la Haute-Garonne (31). Pour cela, depuis la table attributaire, dans la barre d'outils, cliquez sur l'icône `Sélectionner les entités en utilisant une expression`. Appliquez ensuite la procédure suivante :
 
 - Cliquez sur `Champs et valeurs` (colonne du milieu) pour voir la liste des champs de la table (i.e. les attributs)
-- Double-cliquez sur le champ INSEE_DEP > apparition dans la case `Expression` à gauche de la fenêtre (notez les guillemets doubles)
+- Double-cliquez sur le champ INSEE_DEP ; apparition dans la case `Expression` à gauche de la fenêtre (notez les guillemets doubles)
 - Cliquez sur l'opérateur =
 - Rajouter le numéro de département 31 
 - Lancer la requête en cliquant sur le bouton `Sélectionner des entités` en bas de la fenêtre
 
 ![Requête SQL pour conserver les communes de Haute-Garonne](figures/requete_sql31.png)
 
+Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la couche COMMUNE > `Exporter` > `Sauvegarder les entités sélectionnées sous...` Choisissez comme `Nom de fichier` votre fichier au format gpkg déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches. Précisez "Communes" pour le `Nom de la couche` et vérifiez que l'option `N'enregistrer que les entités sélectionnées` est bien cochée. Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données gpkg (GeoPackage) contient bien deux couches.
 
-
+![Couche des communes du département 31 au format gpkg](figures/geoPackage_dpt.png)
 
 
 ## Les Petites Régions Agricoles (site agreste)
 
 Les Régions Agricoles (RA) constituent un zonage d'agriculture homogène composé d'un ensemble de communes. Le croisement avec les limites départementales conduit aux Petites Régions Agricole (PRA). Ce découpage a été initialisé en 1946 et actualisé par la suite. La liste des PRA est [accessible sur le site](https://agreste.agriculture.gouv.fr/agreste-web/methodon/Z.1/!searchurl/listeTypeMethodon/) du service statistique ministériel de l'agriculture (agreste). Le référentiel date de 2017. Il s'agit d'un fichier .xls à télécharger.
 
-Sous cette forme, il n'est pas possible de spatialiser les PRA. Pour y parvenir, on va récupérer les limites communales et réaliser ensuite une *jointure* attributaire avec le fichier des PRA. 
+Sous cette forme, il n'est pas possible de spatialiser les PRA. Pour y parvenir, on va réaliser une *jointure* attributaire avec le fichier des communes.
 
 
 
