@@ -126,13 +126,15 @@ Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, O
 
 1. Installer un *plug-in* dédié. Pour cela, dans le menu `Extensions > Installer`, recherchez le *plug-in* `QuickMapServices` et installez-le. Vérifiez ensuite l'installation et les données disponibles par défaut dans le menu `Internet > QuickMapServices`. Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in* et l'onglet `More services`.
 
-2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` avec pour nom "Google Maps" et pour URL `https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D`. Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant : [**https://git.io/fjMJq**](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py). C'est beau la technique... ;-)
-
-> **A noter** : les données accessibles *sont définies dans un système de projection dit pseudo-Mercator (EPSG:3857). Il ne s'agit plus de votre système de référence. QGIS applique donc une reprojection à la volée. 
-
-Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de fournisseurs de tuiles dans la partie `XYZ Tiles`. Double-cliquez sur `Google Satellite` pour avoir uniquement une image (ici, une photographie aérienne) en fond.
+2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` (clic bouton droit) avec pour nom "Google Maps" et pour URL `https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D`. Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant : [**https://git.io/fjMJq**](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py). C'est beau la technique... ;-)
 
 ![Nouveau symbole SVG importé depuis une URL](figures/connexionXYZ.png)
+
+> **A noter** : les données accessibles sont définies dans un système de projection dit pseudo-Mercator (EPSG:3857). Il est différent du SRC de votre projet. QGIS applique donc une reprojection à la volée pour que tout se passe bien. 
+
+Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de fournisseurs de tuiles dans la partie `XYZ Tiles`. Double-cliquez sur `Google Satellite` pour avoir uniquement une image en fond.
+
+
 
 
 
