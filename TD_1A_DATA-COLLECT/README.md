@@ -31,7 +31,7 @@ Sauvegardez à présent votre projet dans votre dossier de travail : `Projet > E
 
 # Localiser votre EA
 
-Nous allons représenter le siège de l'EA de Borret sous forme de point en utilisant le Geoportail de l'IGN.
+Nous allons représenter le siège de l'EA de Borret sous forme d'un point en s'aidant du Geoportail de l'IGN.
 
 
 **Méthode 1 : Export du lieu depuis le Geoportail**
@@ -48,12 +48,26 @@ Une fois que l'EA est localisée, sélectionnez l'onglet à droite de l'écran c
 
 ![Placez votre point et exportez le résultat](figures/geoportail_ajoutpoint.png)
 
-Votre point peut être exporté au format `kml` (depuis le menu `Annoter la carte`). Par défaut, le SRC associé aux objets est le WGS-84 (EPSG:4326). Après import sous QGIS, il faudra veiller à convertir le système pour être cohérent avec celui du projet (EPSG:2154). Nous le verrons par la suite lors de l'import.
+Votre point peut être exporté au format `kml` (depuis le menu `Annoter la carte`). Par défaut, le SRC associé aux objets est le WGS-84 (EPSG:4326). Après import sous QGIS, il faudra veiller à convertir le système pour être cohérent avec celui du projet (EPSG:2154). Nous le verrons par la suite.
 
 
+**Méthode 2 : import des coordonnées depuis un csv**
 
+Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format CSV est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit). 
 
+Pour obtenir les coordonnées X et Y de votre exploitation, vous pouvez utiliser soit le Géoportail soit Google Maps. Une autre façon de les obtenir serait d'aller sur place et d'utiliser un GPS (celui de votre smartphone par exemple).
 
+Si vous faites dans Google Maps un clic droit sur l'endroit qui vous intéresse et que vous cliquez sur "Plus d'infos sur cet endroit", vous verrez alors apparaître les coordonnées dans l'ordre Y et X (et non X et Y - soit la latitude avant la longitude).
+
+![Obtenir les coordonnées Y et X dans Google Maps](figures/chemin_borret_gmaps.png){height=50px}
+
+Il ne vous reste plus qu'à les enregistrer dans votre tableur (Excel ou LibreOffice Calc) en faisant bien attention à ajouter le nom de chaque colonne :
+
+![Ajouter dans un fichier texte les coordonnées](figures/tableur_csv.png){height=50px}
+
+À noter, les coordonnées fournies par Google Maps utilisent le système de coordonnées géographique EPSG:4326.
+
+Enregistrez maintenant votre fichier au format `csv`.
 
 
 
