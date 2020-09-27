@@ -51,7 +51,7 @@ Une fois que l'EA est localisée, sélectionnez l'onglet à droite de l'écran c
 Votre point peut être exporté au format `kml` (depuis le menu `Annoter la carte`). Par défaut, le SRC associé aux objets est le WGS-84 (EPSG:4326). Après import sous QGIS, il faudra veiller à convertir le système pour être cohérent avec celui du projet (EPSG:2154). Nous le verrons par la suite.
 
 
-**Méthode 2 : import des coordonnées depuis un csv**
+## Méthode 2 : import des coordonnées depuis un csv
 
 Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format CSV est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit). 
 
@@ -66,7 +66,7 @@ Enregistrez à présent les coordonnées via un tableur ou directement dans un �
 ![Ajouter dans un fichier texte les coordonnées](figures/fichier_csv.png){height=50px}
 
 
-**Importer le siège de l'EA sous QGIS**
+## Importer le siège de l'EA sous QGIS
 
 Pour importer un fichier, il faut passer par le `Gestionnaire des sources de données` :
 
@@ -81,7 +81,7 @@ Pour importer un fichier, il faut passer par le `Gestionnaire des sources de don
 Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez prendre connaissance de ses propriétés pour les contrôler (clic droit sur le nom de la couche > `Propriétés`). Dans l'onglet `Information`, vérifiez le SRC : `EPSG:4326`. Fermez ensuite la fenêtre.  
 
 
-**Rendre cohérent le SRC de la couche avec celui du projet**
+## Rendre cohérent le SRC de la couche avec celui du projet
 
 Vérifiez le SRC de votre projet. A-t-il changé ? Il est probable qu'il soit repassé en WGS-84 (EPSG:4326) alors que nous l'avions défini en Lambert-93 (EPSG:2154)... Pourquoi ? Allez dans le menu `Préférences > Options` et sélectionnez l'onglet `SRC`. Par défaut, le SRC peut être (re)défini automatiquement lors de l'ajout de la première couche. Pour éviter cela, vous pouvez choisir le Lambert-93 comme SRC par défaut puis, fermer la fenêtre. Il faut ensuite redéfinir le SRC de votre projet (EPSG:2154).  
 
