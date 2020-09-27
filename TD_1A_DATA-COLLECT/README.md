@@ -150,7 +150,7 @@ Pour configurer ce service sous QGIS, sélectionnez `WMS/WMTS` dans le panneau `
 
 Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`. Une illustration est présentée ci-dessous.
 
-![Exploitation agricole avec bâtiments et parcelles cadastrales](EA_parcellaireCad.png)
+![Exploitation agricole avec bâtiments et parcelles cadastrales](figures/EA_parcellaireCad.png)
 
 
 
