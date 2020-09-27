@@ -137,16 +137,18 @@ Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de f
 
 ## Visualiser un fond issu du Geoportail de l'IGN via un flux
 
-L'IGN a également mis en place une liste de *Geoservices*. On peut ainsi accéder à une partie des données du Geoportail via l'URL suivante :
+L'IGN a également mis en place une liste de *Geoservices*. On peut ainsi accéder à une partie des données du Geoportail via les URL suivantes :
 
 - `https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities` (pour les ressources images)
+- `https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities` (pour les ressources vecteur)
 
-Il s'agit d'un [service d'images tuilées](https://geoservices.ign.fr/documentation/geoservices/wmts.html) (Web Map Tile Service). Il contient dans son adresse une clé, définie par l'IGN ("choisirgeoportail"). Cette clé ne nécessite pas la création d'un compte au préalable. Elle donne directement accès à certaines ressources comme les photographies aériennes ou le parcellaire cadastrale, pour un test. Pour davantage de détail, reportez-vous à la [documentation](https://geoservices.ign.fr/documentation/services-acces.html) des Geoservices de l'IGN.
+Le WMTS est un [service d'images tuilées](https://geoservices.ign.fr/documentation/geoservices/wmts.html) (Web Map Tile Service). Il contient dans son adresse une clé (= "choisirgeoportail"), définie par l'IGN. Cette clé ne nécessite pas la création d'un compte au préalable. Elle donne directement accès à certaines ressources comme les photographies aériennes ou le parcellaire cadastrale, pour un test. Reportez-vous à la [documentation](https://geoservices.ign.fr/documentation/services-acces.html) des *Geoservices* de l'IGN pour davantage de détail.
 
-Pour accéder à ce service, sélectionnez `WMS/WMTS` dans le panneau `Explorateur` de QGIS et créez (clic bouton droit) une nouvelle connexion "Geoportail" en reportant l'URL mentionnée ci-dessus. Vous devriez obtenir les flux suivants :
+Pour configurer ce service sous QGIS, sélectionnez `WMS/WMTS` dans le panneau `Explorateur` et créez (clic bouton droit) une nouvelle connexion "Geoportail" en reportant l'URL mentionnée ci-dessus. Vous devriez obtenir les flux suivants :
 
 ![Nouveau symbole SVG importé depuis une URL](figures/wmts_ign.png)
 
+Pour les ressources vecteur, c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`.
 
 
 
