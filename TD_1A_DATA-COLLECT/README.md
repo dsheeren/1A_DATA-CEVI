@@ -116,6 +116,49 @@ Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de chang
 En restant dans les `Propriétés` de la couche, sélectionnez l'onglet `Étiquettes`. Choisissez `Étiquettes simples` avec comme valeur celle du champ `Nom`. En adoptant une position `cartographique`, appliquez une `distance de décalage` pour cette étiquette `à partir de l'emprise du symbole`. Le nom de l'exploitation doit désormais apparaître sur la carte après application. 
 
 
+# Ajouter un fond cartographique
+
+Quand on dispose d'un fond cartographique (ex. photographie aérienne, carte topographique) sur son disque dure local, il suffit de l'importer dans le projet QGIS. Une alternative est d'avoir recours à des fonds cartographiques enregistrés sur des serveurs distants. Ceux-ci sont alors disponibles via des *services Web*. Ces services sont accessibles via une URL (adresse qui pointe vers le serveur) renseignée dans l'application cliente (ici QGIS). Plusieurs types de services existent : (1) le WMS (*Web Map Service*) qui renvoie des données en mode image, (2) le WFS (*Web Feature Service*) qui retourne des données en mode vecteur, et (3) le WCS (*Web Coverage Service*) qui renvoie des données raster avec des fonctions d'interrogation plus avancées que le WMS.
+
+## Visualiser un fond OpenStreetMap ou Google Maps via un flux
+
+Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, OpenStreetMap). Deux solutions pour y accéder :
+
+1. Installer un *plug-in* dédié. Pour cela, dans le menu `Extensions > Installer`, recherchez le *plug-in* `QuickMapServices` et installez-le. Vérifiez ensuite l'installation et les données disponibles par défaut dans le menu `Internet > QuickMapServices`. Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in* et l'onglet `More services`.
+
+2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` avec pour nom "Google Maps" et pour URL `https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D`. Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant : [**https://git.io/fjMJq**](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py). C'est beau la technique... ;-)
+
+> **A noter** : les données accessibles *sont définies dans un système de projection dit pseudo-Mercator (EPSG:3857). Il ne s'agit plus de votre système de référence. QGIS applique donc une reprojection à la volée. 
+
+Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de fournisseurs de tuiles dans la partie `XYZ Tiles`. Double-cliquez sur `Google Satellite` pour avoir uniquement une image (ici, une photographie aérienne) en fond.
+
+![Nouveau symbole SVG importé depuis une URL](figures/connexionXYZ.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
