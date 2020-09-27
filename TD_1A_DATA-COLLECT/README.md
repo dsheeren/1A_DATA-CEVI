@@ -128,7 +128,7 @@ Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, O
 
 2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` (clic bouton droit) avec pour nom "Google Maps" et pour URL `https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D`. Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant : [**https://git.io/fjMJq**](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py). C'est beau la technique... ;-)
 
-![Nouveau symbole SVG importé depuis une URL](figures/connexionXYZ.png)
+![Flux de fonds de carte gratuits](figures/connexionXYZ.png)
 
 > **A noter** : les données accessibles sont définies dans un système de projection dit pseudo-Mercator (EPSG:3857). Il est différent du SRC de votre projet. QGIS applique donc une reprojection à la volée pour que tout se passe bien. 
 
@@ -146,10 +146,11 @@ Le WMTS est un [service d'images tuilées](https://geoservices.ign.fr/documentat
 
 Pour configurer ce service sous QGIS, sélectionnez `WMS/WMTS` dans le panneau `Explorateur` et créez (clic bouton droit) une nouvelle connexion "Geoportail" en reportant l'URL mentionnée ci-dessus. Vous devriez obtenir les flux suivants :
 
-![Nouveau symbole SVG importé depuis une URL](figures/wmts_ign.png)
+![Flux WMTS du Geoportail](figures/wmts_ign.png)
 
-Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`.
+Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`. Une illustration est présentée ci-dessous.
 
+![Exploitation agricole avec bâtiments et parcelles cadastrales](EA_parcellaireCad.png)
 
 
 
