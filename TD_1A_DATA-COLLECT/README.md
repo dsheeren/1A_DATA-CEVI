@@ -83,10 +83,13 @@ Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez pr
 
 Vérifiez le SRC de votre projet. A-t-il changé ? Il est probable qu'il soit repassé en WGS-84 (EPSG:4326) alors que nous l'avions défini en Lambert-93 (EPSG:2154)... Pourquoi ? Allez dans le menu `Préférences > Options` et sélectionnez l'onglet `SRC`. Par défaut, le SRC peut être (re)défini automatiquement lors de l'ajout de la première couche. Pour éviter cela, vous pouvez choisir le Lambert-93 comme SRC par défaut puis, fermer la fenêtre. Il faut ensuite redéfinir le SRC de votre projet (EPSG:2154).  
 
-Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est malgré tout visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`. Le SCR cible de la nouvelle couche devra être `EPSG:2154` comme celui de votre projet. NB : si le menu `Traitement` n'est pas accessible, allez dans `Extensions > Installer / Gérer les extensions` et activez l'extension `Processing`.
+![Changer les options de SRC pour les projets](figures/src.png){height=50px}
+
+Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`. Le SCR cible de la nouvelle couche devra être `EPSG:2154` comme celui de votre projet. 
+NB : si le menu `Traitement` n'est pas accessible, allez dans `Extensions > Installer / Gérer les extensions` et activez l'extension `Processing`.
 
 
-![SRC projet](figures/src.png){height=50px}
+
 
 
 
