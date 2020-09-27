@@ -148,9 +148,56 @@ Pour configurer ce service sous QGIS, sélectionnez `WMS/WMTS` dans le panneau `
 
 ![Flux WMTS du Geoportail](figures/wmts_ign.png)
 
-Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`. Une illustration est présentée ci-dessous.
+Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`. Une illustration après ajout et changement de symbologie est présentée ci-dessous.
 
 ![Exploitation agricole avec bâtiments et parcelles cadastrales](figures/EA_parcellaireCad.png)
+
+
+# Rechercher des données relatives à l'environnement de l'EA
+
+## Les limites communales (site IGN)
+
+Nous allons d'abord télécharger les communes de Haute-Garonne à partir de la base de données ADMIN EXPRESS (qui remplace la base GEOFLA). Cette base contient notamment des couches de régions, départements et communes au format vecteur. Elle est accessible sur la page du [site de l'IGN](https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#admin-express) qui regroupe les données libres.
+
+Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/ADMIN-EXPRESS_2-4__SHP__FRA_L93_2020-09-15.7z)) l'édition 2020 par territoire. Décompressez ensuite l'archive .7z et recherchez la couche COMMUNE au format .shp (projection Lambert-93). Importez-là sous QGIS. Prenez connaissance de la représentation cartographique et du contenu de la table attributaire (clic droit sur la couche > `Ouvrir la table d'attributs`)
+
+Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sélectionner que les communes de la Haute-Garonne (31). Pour cela, depuis la table attributaire, dans la barre d'outils, cliquez sur l'icône `Sélectionner les entités en utilisant une expression`. Appliquez ensuite la procédure suivante :
+
+- Cliquez sur `Champs et valeurs` (colonne du milieu) pour voir la liste des champs de la table (i.e. les attributs)
+- Double-cliquez sur le champ INSEE_DEP > apparition dans la case `Expression` à gauche de la fenêtre (notez les guillemets doubles)
+- Cliquez sur l'opérateur =
+- Rajouter le numéro de département 31 
+- Lancer la requête en cliquant sur le bouton `Sélectionner des entités` en bas de la fenêtre
+
+![Requête SQL pour conserver les communes de Haute-Garonne](figures/requete_sql31.png)
+
+
+
+
+
+## Les Petites Régions Agricoles (site agreste)
+
+Les Régions Agricoles (RA) constituent un zonage d'agriculture homogène composé d'un ensemble de communes. Le croisement avec les limites départementales conduit aux Petites Régions Agricole (PRA). Ce découpage a été initialisé en 1946 et actualisé par la suite. La liste des PRA est [accessible sur le site](https://agreste.agriculture.gouv.fr/agreste-web/methodon/Z.1/!searchurl/listeTypeMethodon/) du service statistique ministériel de l'agriculture (agreste). Le référentiel date de 2017. Il s'agit d'un fichier .xls à télécharger.
+
+Sous cette forme, il n'est pas possible de spatialiser les PRA. Pour y parvenir, on va récupérer les limites communales et réaliser ensuite une *jointure* attributaire avec le fichier des PRA. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
