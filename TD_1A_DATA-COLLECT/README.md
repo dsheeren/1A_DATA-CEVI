@@ -55,26 +55,22 @@ Votre point peut être exporté au format `kml` (depuis le menu `Annoter la cart
 
 Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format CSV est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit). 
 
-Pour obtenir les coordonnées X et Y de votre exploitation, vous pouvez utiliser soit le Géoportail soit Google Maps. Une autre façon de les obtenir serait d'aller sur place et d'utiliser un GPS (celui de votre smartphone par exemple).
+Pour obtenir les coordonnées X et Y du siège de l'EA, vous pouvez utiliser le Géoportail (onglet `outils > Afficher les cooronnées`). Plusieurs SRC sont proposés ce qui est intéressant. Cette source est très fiable. Une alternative est de passer par Google Maps. C'est ce que nous allons choisir ici pour l'exemple. 
 
-Si vous faites dans Google Maps un clic droit sur l'endroit qui vous intéresse et que vous cliquez sur "Plus d'infos sur cet endroit", vous verrez alors apparaître les coordonnées dans l'ordre Y et X (et non X et Y - soit la latitude avant la longitude).
+Après avoir identifé l'EA sur Google Maps, cliquez (bouton droit) sur le lieu d'intérêt en sélectionnant ensuite l'option `Plus d'infos sur cet endroit` dans la fenêtre. Les coordonnées géographiques apparaissent en dégrés décimaux (EPSG:4326), dans l'ordre Y (latitude) et X (longitude). :warning: **source d'erreurs fréquentes**...
 
 ![Obtenir les coordonnées Y et X dans Google Maps](figures/chemin_borret_gmaps.png){height=50px}
 
-Il ne vous reste plus qu'à les enregistrer dans votre tableur (Excel ou LibreOffice Calc) en faisant bien attention à ajouter le nom de chaque colonne :
+Enregistrez à présent les coordonnées via un tableur ou directement dans un éditeur de texte au format `csv`:
 
-![Ajouter dans un fichier texte les coordonnées](figures/tableur_csv.png){height=50px}
-
-À noter, les coordonnées fournies par Google Maps utilisent le système de coordonnées géographique EPSG:4326.
-
-Enregistrez maintenant votre fichier au format `csv`.
+![Ajouter dans un fichier texte les coordonnées](figures/fichier_csv.png){height=50px}
 
 
+**Importer le siège de l'EA sous QGIS**
 
+Nous allons maintenant importer les fichiers créés sous QGIS. Pour cela, il faut passer par le `Gestionnaire des sources de données`. 
 
-
-
-
+![Charger une couche dans QGIS](figures/QGIS_charger.png){height=150px}
 
 
 
