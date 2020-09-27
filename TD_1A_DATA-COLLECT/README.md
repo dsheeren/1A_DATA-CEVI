@@ -74,7 +74,9 @@ Pour importer un fichier, il faut passer par le `Gestionnaire des sources de don
 
 - Si vous avez opté pour la méthode 1, sélectionnez l'onglet `Vecteur` depuis le gestionnaire des couches et recherchez votre fichier `kml` comme source à importer (NB : le "glisser/déposer" peut aussi se pratiquer). 
 
-- Si vous avez opté pour la méthode 2, sélectionnez l'onglet `Texte Délimité` et recherchez votre fichier `csv` comme nom à importer. :warning: Pensez à bien préciser la géométrie souhaitée. Il s'agit ici de créer un object ponctuel à partir des coordonnées (X,Y) enregistrées. Ainsi, il faut apparier vos colonnes du fichier avec les champs X et Y en choisissant une géométrie `point`. :warning: Ne pas oublier de préciser également dans quel SRC sont enregistrées vos coordonnées. Ici, le `SRC de la géométrie` a pour code EPSG:4326.
+- Si vous avez opté pour la méthode 2, sélectionnez l'onglet `Texte Délimité` et recherchez votre fichier `csv` comme nom à importer. 
+:warning: Pensez à bien préciser la géométrie souhaitée. Il s'agit ici de créer un object ponctuel à partir des coordonnées (X,Y) enregistrées. Ainsi, il faut apparier vos colonnes du fichier avec les champs X et Y en choisissant une géométrie `point`. 
+:warning: Ne pas oublier de préciser également dans quel SRC sont enregistrées vos coordonnées. Ici, le `SRC de la géométrie` a pour code EPSG:4326.
 
 Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez prendre connaissance de ses propriétés pour les contrôler (clic droit sur le nom de la couche > `Propriétés`). Dans l'onglet `Information`, vérifiez le SRC : `EPSG:4326`. Fermez ensuite la fenêtre.  
 
