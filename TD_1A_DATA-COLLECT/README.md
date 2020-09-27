@@ -142,13 +142,13 @@ L'IGN a également mis en place une liste de *Geoservices*. On peut ainsi accéd
 - `https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities` (pour les ressources images)
 - `https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities` (pour les ressources vecteur)
 
-Le WMTS est un [service d'images tuilées](https://geoservices.ign.fr/documentation/geoservices/wmts.html) (Web Map Tile Service). Il contient dans son adresse une clé (= "choisirgeoportail"), définie par l'IGN. Cette clé ne nécessite pas la création d'un compte au préalable. Elle donne directement accès à certaines ressources comme les photographies aériennes ou le parcellaire cadastrale, pour un test. Reportez-vous à la [documentation](https://geoservices.ign.fr/documentation/services-acces.html) des *Geoservices* de l'IGN pour davantage de détail.
+Le WMTS est un [service d'images tuilées](https://geoservices.ign.fr/documentation/geoservices/wmts.html) (Web Map Tile Service). Il contient dans son adresse une clé (= "choisirgeoportail"), définie par l'IGN. Cette clé ne nécessite pas la création d'un compte au préalable. Elle donne directement accès à certaines ressources comme les photographies aériennes, pour un test. Reportez-vous à la [documentation](https://geoservices.ign.fr/documentation/services-acces.html) des *Geoservices* de l'IGN pour davantage de détail.
 
 Pour configurer ce service sous QGIS, sélectionnez `WMS/WMTS` dans le panneau `Explorateur` et créez (clic bouton droit) une nouvelle connexion "Geoportail" en reportant l'URL mentionnée ci-dessus. Vous devriez obtenir les flux suivants :
 
 ![Nouveau symbole SVG importé depuis une URL](figures/wmts_ign.png)
 
-Pour les ressources vecteur, c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`.
+Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`.
 
 
 
