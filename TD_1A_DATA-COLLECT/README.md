@@ -68,7 +68,7 @@ Enregistrez à présent les coordonnées via un tableur ou directement dans un �
 
 
 
-## Importer le siège de l'EA sous QGIS
+## Charger la localisation de l'EA sous QGIS
 
 Pour importer un fichier, il faut passer par le `Gestionnaire des sources de données` :
 
@@ -98,6 +98,24 @@ Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui 
 
 
 
+## Ajouter le nom de votre exploitation
+
+Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il va falloir le modifier. Cliquez (bouton droit) sur la couche et sélectionnez `Ouvrir la table d'attributs`. Par défaut vous ne pouvez pas modifier le contenu des champs (le fichier est en mode *lecture*). Pour permettre l'édition (mode *écriture*), il faut activer le crayon en haut à gauche de la fenêtre. Vous pouvez alors reneigner le nom de votre exploitation agricole dans la colonne `Nom` (ex. Borret). Une fois l'édition terminée, désactivez le crayon. 
+
+
+## Modifier l'affichage de votre exploitation
+
+### Changer le type d'icône
+
+Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de changer tout ce qui a trait à la représentation de vos données. Sélectionnez `Symbole Simple` et changez le type de symbole en `Symbole SVG`. De nombreux symboles sont disponibles. Il est aussi possible d'importer des fichiers SVG. C'est l'option que nous allons choisir en important un symbole depuis l'URL suivante : [https://www.svgrepo.com/show/228574/silo.svg](https://www.svgrepo.com/show/228574/silo.svg). Modifiez à présent la taille du symbole : L et h = 10 mm.
+
+![Nouveau symbole SVG importé depuis une URL](figures/symbole.png)
+
+### Afficher le nom de l'EA (étiquette)
+
+En restant dans les `Propriétés` de la couche, sélectionnez l'onglet `Étiquettes`. Choisissez `Étiquettes simples` avec comme valeur celle du champ `Nom`. En adoptant une position `cartographique`, appliquez une `distance de décalage` pour cette étiquette `à partir de l'emprise du symbole`. Le nom de l'exploitation doit désormais apparaître sur la carte après application. 
+
+![Exploitation avec étiquette et icône SVG](figures/Borret_EA.png)
 
 
 
