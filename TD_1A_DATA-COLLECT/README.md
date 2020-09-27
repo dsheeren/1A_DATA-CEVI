@@ -161,6 +161,8 @@ Nous allons d'abord télécharger les communes de Haute-Garonne à partir de la 
 
 Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/ADMIN-EXPRESS_2-4__SHP__FRA_L93_2020-09-15.7z)) l'édition 2020 par territoire. Décompressez ensuite l'archive .7z et recherchez la couche COMMUNE au format .shp (projection Lambert-93). Importez-là sous QGIS. Prenez connaissance de la représentation cartographique et du contenu de la table attributaire (clic droit sur la couche > `Ouvrir la table d'attributs`)
 
+### Requête attributaire
+
 Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sélectionner que les communes de la Haute-Garonne (31). Pour cela, depuis la table attributaire, dans la barre d'outils, cliquez sur l'icône `Sélectionner les entités en utilisant une expression`. Appliquez ensuite la procédure suivante :
 
 - Cliquez sur `Champs et valeurs` (colonne du milieu) pour voir la liste des champs de la table (i.e. les attributs)
@@ -179,22 +181,34 @@ Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la 
 
 ## Les Petites Régions Agricoles (site agreste)
 
-Les Régions Agricoles (RA) constituent un zonage d'agriculture homogène composé d'un ensemble de communes. Le croisement avec les limites départementales conduit aux Petites Régions Agricole (PRA). Ce découpage a été initialisé en 1946 et actualisé par la suite. La liste des PRA est [accessible sur le site](https://agreste.agriculture.gouv.fr/agreste-web/methodon/Z.1/!searchurl/listeTypeMethodon/) du service statistique ministériel de l'agriculture (agreste). Le référentiel date de 2017. Il s'agit d'un fichier .xls à télécharger.
+Les Régions Agricoles (RA) constituent un zonage d'agriculture homogène composé d'un ensemble de communes. Le croisement avec les limites départementales conduit aux Petites Régions Agricole (PRA). Ce découpage a été initialisé en 1946 et actualisé par la suite. La liste des PRA est accessible sur [le site du service statistique ministériel de l'agriculture](https://agreste.agriculture.gouv.fr/agreste-web/methodon/Z.1/!searchurl/listeTypeMethodon/) (agreste). Le référentiel date de 2017. Il s'agit d'un fichier .xls à télécharger.
 
-Sous cette forme, il n'est pas possible de spatialiser les PRA. Pour y parvenir, on va réaliser une *jointure* attributaire avec le fichier des communes.
-
-
+Après téléchargement, supprimez les premières lignes de ce fichier pour qu'il démarre par les en-têtes des colonnes. Enregistrez ensuite ce fichier au format texte `.csv` (avec une virgule comme séparateur de champ). Importez ce fichier sous QGIS comme précédemment (cf. `Texte Délimité`) en cochant l'option `Pas de géométrie` (juste la table). 
 
 
+### Jointure attributaire
+
+Sous cette forme, il n'est pas possible de spatialiser les PRA puisqu'il s'agit d'une table. Pour y parvenir, une *jointure* attributaire avec la couche des communes peut être réalisée. Cela nécessite de vérifier qu'il y a champ commun dans les deux tables pour les relier et c'est le cas : le nom des communes ! 
+
+Allez dans les `Propriétés` de la couche COMMUNE, onglet `Jointures`. Cliquez sur le symbole + pour ajouter une jointure. La `couche à joindre` est le référentiel PRA. Le `champ de jointure` dans le fichier PRA est `LIBGEO` correspondant au nom des communes. Le `champ dans la couche cible` est `NOM_COMM`. Appliquez.
 
 
+![Opération de jointure attributaire](figures/jointure.png)
 
 
+Que constatez-vous dans la table des communes après jointure ? Toutes les informations de l'autre table ont été importées (temporairement). 
+
+> **A noter** : le sens de la jointure a une importance. Il ne doit pas être laissé au hasard. La cible doit être le fichier dans lequel vous souhaitez rapatrier l'information. 
+
+Nous avons de la chance. Les noms de communes dans les deux tables sont strictement identiques (accent, orthographe...) ce qui nous a évité d'avoir des erreurs. Ce n'est pas toujours le cas... Nous avons également récupéré une colonne correspondant au libellé de la PRA. Nous allons pouvoir le cartographier. 
 
 
+### Cartographie de la valeur d'un champ
+
+Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter spatialement. Pour cela, allez dans les `Propriétés` de la couche COMMUNE (avec la jointure), onglet `Symbologie`. Nous souhaitons réaliser une symbologie qui varie selon les différentes valeurs de PRA. Le symbole est donc `Catégorisé` en fonction d'une `valeur` correspondant au champ `PRA_Lib` (libellé). Demander de `Classer` (bouton en bas à gauche) pour affecter une couleur à chaque modalité. Adaptez si besoin les couleurs et appliquez. 
 
 
-
+![Opération de jointure attributaire](figures/carto_PRA.png)
 
 
 
