@@ -34,7 +34,7 @@ Sauvegardez à présent votre projet dans votre dossier de travail : `Projet > E
 Nous allons représenter le siège de l'EA de Borret sous forme d'un point en s'aidant du Geoportail de l'IGN.
 
 
-**Méthode 1 : Export du lieu depuis le Geoportail**
+## Méthode 1 : Export du lieu depuis le Geoportail
 
 L'IGN a conçu un portail de visualisation de nombreuses sources de données spatiales avec quelques fonctionnalités de localisation : [www.geoportail.gouv.fr/](https://www.geoportail.gouv.fr/)
 
@@ -68,7 +68,7 @@ Enregistrez à présent les coordonnées via un tableur ou directement dans un �
 
 
 
-## Importer le siège de l'EA sous QGIS
+## Importer le siège de l'EA sous QGIS
 
 Pour importer un fichier, il faut passer par le `Gestionnaire des sources de données` :
 
