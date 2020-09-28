@@ -245,10 +245,85 @@ Vous pouvez utiliser l'outil d'identification (l'icône du curseur qui pointe su
 
 Pour une représentation plus détaillée de la géologie, c'est plutôt la version au 1/50 000 qu'il faut consulter. Depuis quelques temps, le BRGM rend possible le téléchargement des cartes géologiques départementales vectorisées et harmonisées au 1/50 000 (BD Charm-50) sur [son site](https://infoterre.brgm.fr/page/telechargement-cartes-geologiques) au format `shp`. 
 
-Pour une visualisation fluide des différentes échelles, vous pouvez utiliser depuis votre navigateur, la version WMS-C qui intègre des tuiles d’images pré-construites afin d’accélérer leur affichage : [http://geoservices.brgm.fr/wms-c.html](http://geoservices.brgm.fr/wms-c.html).
+Pour une visualisation fluide des différentes échelles, vous pouvez aussi utiliser depuis votre navigateur, la version WMS-C qui intègre des tuiles d’images pré-construites afin d’accélérer leur affichage : [http://geoservices.brgm.fr/wms-c.html](http://geoservices.brgm.fr/wms-c.html).
  
 
 ![Visualisation des cartes géologiques avec la version WMS-C](figures/geol.png)
+
+
+
+## Accéder au référentiel hydrographique (Sandre)
+
+C'est le [Sandre](http://www.sandre.eaufrance.fr/) (Service d'administration nationale des données et référentiels sur l'eau) qui propose différents flux. Pour l'accès au cours d'eau, le service WFS est le suivant : `http://services.sandre.eaufrance.fr`
+
+
+
+
+# Dessiner un parcellaire agricole (digitalisation)
+
+Si vous souhaitez représenter le parcellaire de votre exploitation, vous pouvez le *digitaliser* en utilisant les outils dédiés. 
+
+## Créer une nouvelle couche
+
+Vérifiez dans le menu `Vue > Barre d'outils` que les `Barre d'outils de numérisation`, `Barre d'outils de numérisation avancée` et `accrochage` soient activées. Ensuite :
+
+- Créer un fichier vectoriel de type polygone (au format geopackage)
+
+   	- Menu `Couche > Créer une couche > Nouvelle couche GeoPackage`
+	- Sélectionnez votre fichier gpkg existant au niveau de la `Base de données`
+	- Donnez un nom à votre nouvelle couche : parcellaire
+	- Choisissez bien le type de géométrie `polygone` et la projection `EPSG:2154`.
+
+- Ajouter un champ de type `Nombre entier` et nommez-le `numparcelle`.
+
+- Ajouter un champ de type `Donnée texte` et nommez-le `description`.
+
+- Ajouter un champ de type `Donnée texte` et nommez-le `assolement`.
+
+- Une fois la couche *ajoutée* à votre base (sans l'écraser...), cliquez sur le petit crayon en haut à gauche dans le menu pour commencer à dessiner vos parcelles.
+
+- Il suffira ensuite de sélectionner l'outil `Ajouter une entité polygonale` et de dessiner le parcellaire
+
+![Créer une entité polygonale](figures/parcellaire.png)	
+
+À chaque clic gauche, un nouveau point de votre polygone est ajouté. Pour terminer votre polygone, il suffit de faire un clic droit.
+
+Pour se déplacer pendant la vectorisation, vous pouvez soit dézoomer (avec la molette de la souris), soit changer d'endroit en maintenant la touche espace du clavier tout en déplaçant votre curseur. Vous pouvez alors numériser l'ensemble des parcelles de l'exploitation de Borret. Veillez également à renseigner les attributs des objets (notamment saisir dans la description le type de la parcelle).
+
+
+## S'accrocher aux polygones déjà créés
+
+L'outil accrochage est indispensable quand on fait de la digitalisation. Si vous ne l'avez pas activé, il va vous manquer car cet outil permet de s'appuyer sur les polygones déjà créés et agit comme un aimant. Si le nouveau point que vous voulez créer est très proche d'un point d'une parcelle existante, alors l'outil accrochage va comprendre qu'il ne faut pas le dupliquer mais l'utiliser. Quel est l'intérêt ? Cela réduit les erreurs. Avec le format GeoPackage, la structure de donnée est *non topologique* (i.e. *spaghetti*). Cette structure ne vous empêche pas de créer des polygones qui se superposent ou qui ne partagent pas le même segment en cas d'adjacence. A première vue, ça peut paraître sans importance mais cela engendre de nombreuses erreurs de calcul par la suite à cause de géométries biaisées (en plus de données redondantes). Il faut donc s'en prémunir au moment de la saisie. 
+
+Afin d'activer la barre d'outils et voir l'icône *aimant* dans votre fenêtre QGIS, cochez : `Vue > Barre d'outils > Accrochage`. Activer l'`édition topologique` et `l'accrochage aux intersections`.
+
+![Outil accrochage de QGIS](figures/accrochage.png)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
