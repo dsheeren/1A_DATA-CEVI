@@ -254,7 +254,7 @@ Pour une visualisation fluide des différentes échelles, vous pouvez aussi util
 
 ## Accéder au référentiel hydrographique (Sandre)
 
-C'est le [Sandre](http://www.sandre.eaufrance.fr/) (Service d'administration nationale des données et référentiels sur l'eau) qui propose différents flux. Pour l'accès au cours d'eau, le service WFS est le suivant : `http://services.sandre.eaufrance.fr`
+C'est le [Sandre](http://www.sandre.eaufrance.fr/) (Service d'administration nationale des données et référentiels sur l'eau) qui propose différents flux. Pour l'accès au cours d'eau, le service WFS est le suivant : `http://services.sandre.eaufrance.fr/geo/eth_FXX?VERSION=1.1.0`
 
 
 
