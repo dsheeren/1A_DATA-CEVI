@@ -221,11 +221,11 @@ Sous QGIS, le SRC de cette couche est inconnu. Il faut donc revenir à la source
 
 Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des zones climatiques puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections > Projection (warp)` (NB : ce n'est pas le même outil que précédemment car ici, il s'agit d'un raster et non d'un vecteur). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
 
-Alors ? En cas de souci (bienvenue dans le monde de la géomatique...;-)), vous trouverez la couche des types de climat en Lambert 93 dans le dossier "data" du TD. 
+Alors ? En cas de souci (bienvenue dans le monde de la géomatique...;-)), vous trouverez la couche des types de climat en Lambert 93 dans le dossier "data" du TD. Il suffit alors d'appliquer une symbologie adaptée (une couleur par catégorie) pour représenter la distribution des différents types.
 
 
 
-## Cartographie d'une variable issue des recensements agricoles (RA)
+## Cartographier une variable issue des recensements agricoles (RA)
 
 Les recensements agricoles (agreste) fournissent de nombreuses informations sur l'agriculture à l'échelon communal. Vous avez déjà suivi un TD consacré à l'extraction de ces données précédemment. Vous trouverez un fichier .xls dans le dossier "data" du TD informant sur les cultures par commune (RA 2010 pour la Haute-Garonne). Ouvrez ce fichier et prenez connaissance du contenu. Il est possible d'envisager une jointure attributaire comme précédemment pour représenter une variable d'intérêt (ex. superficie cultivée en céréales). Néanmoins, un nettoyage des premières lignes est nécessaire pour un import en .csv facile sous QGIS. Par ailleurs, il faudrait isoler le code communal INSEE (ou le nom de la commune) dans une nouvelle colonne afin de pouvoir réaliser la jointure par la suite.
 
@@ -235,6 +235,20 @@ Supprimez d'abord les premières lignes du fichier .xls afin de ne garder que le
 
 
 
+## Afficher les unités géologiques (BRGM)
+
+Rendez-vous sur le site [http://infoterre.brgm.fr/](http://infoterre.brgm.fr/). Nous allons rechercher l'adresse du service web permettant d'afficher les données géologiques sous forme de flux. Allez dans le menu `Données et Services > Geoservices OGC`. Repérez l'URL du service WMS et WFS 'Geologie'. Notez que d'autres services sont disponibles, sur les risques naturels et industriels notamment.
+
+Sous QGIS, sélectionnez `WFS` dans le panneau `Explorateur`. Créez une nouvelle connexion ayant pour nom 'Geologie' avec l'URL du service ([http://geoservices.brgm.fr/geologie](http://geoservices.brgm.fr/geologie)). Connectez-vous ensuite au flux pour voir apparaître les différents jeux de données disponibles. Vous pouvez afficher la carte lithologique simplifiée au 1/1 000 000. Quel est le mode de représentation des données ? raster ou vecteur ? 
+
+Vous pouvez utiliser l'outil d'identification (l'icône du curseur qui pointe sur un petit _i_) pour connaître la nature de l'unité géologique en cliquant sur les objets. Toutefois, la description est très simplifiée. Une version plus complète est disponible avec le flux WFS spécifiquement dédié à la carte géologique : [http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&](http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&). :warning: Pensez également à prendre connaissance des **notices** associées à ces cartes. 
+
+Pour une représentation plus détaillée de la géologie, c'est plutôt la version au 1/50 000 qu'il faut consulter. Depuis quelques temps, le BRGM rend possible le téléchargement des cartes géologiques départementales vectorisées et harmonisées au 1/50 000 (BD Charm-50) sur [son site](https://infoterre.brgm.fr/page/telechargement-cartes-geologiques) au format `shp`. 
+
+Pour une visualisation fluide des différentes échelles, vous pouvez utiliser depuis votre navigateur, la version WMS-C qui intègre des tuiles d’images pré-construites afin d’accélérer leur affichage : [http://geoservices.brgm.fr/wms-c.html](http://geoservices.brgm.fr/wms-c.html).
+ 
+
+![Visualisation des cartes géologiques avec la version WMS-C](figures/geol.png)
 
 
 
