@@ -213,19 +213,25 @@ Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter
 
 ## Les régions climatiques françaises
 
-Une typologie des climats de France métropolitaine a été proposée par [Joly et al. (2010)](https://journals.openedition.org/cybergeo/23155). Elle est basée sur un jeu de 14 variables climatiques relatives aux précipitations et aux températures intégrant une série temporelle de 30 ans (1971-2000). Les données, ainsi que la carte finale, sont disponibles en ligne (voir annexes de la publication).
+Une typologie des climats de France métropolitaine a été proposée par [Joly et al. (2010)](https://journals.openedition.org/cybergeo/23155). Elle est basée sur un jeu de 14 variables climatiques relatives aux précipitations et aux températures intégrant une série temporelle de 30 ans (1971-2000). Les données, ainsi que la carte finale, sont disponibles [en ligne](https://journals.openedition.org/cybergeo/23155) (voir annexes de la publication).
 
 Téléchargez la typologie des climats français au format `.asc` (format de texte ASCII). Importez le fichier sous QGIS via le panneau `Explorateur > raster`. Que constatez-vous ? Où se situe votre couche (image) importée ? Quel est son SRC ? 
 
 Sous QGIS, le SRC de cette couche est inconnu. Il faut donc revenir à la source (annexes de la publication) pour connaître le système de projection et le déclarer. Après examen, il s'agit de la projection Lambert II étendu. 
 
-Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des types de climat puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections > Projection (warp)` (outil GDAL). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
+Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des zones climatiques puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections > Projection (warp)` (NB : ce n'est pas le même outil que précédemment car ici, il s'agit d'un raster et non d'un vecteur). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
 
-Alors ? En cas de souci (bienvenue dans le monde de la géomatique...), vous trouverez la couche des types de climat en Lambert 93 dans le dossier "data" du TD. 
-
-
+Alors ? En cas de souci (bienvenue dans le monde de la géomatique...;-)), vous trouverez la couche des types de climat en Lambert 93 dans le dossier "data" du TD. 
 
 
+
+## Cartographier une variable issue des recensements agricoles (RA)
+
+Les recensements agricoles (agreste) fournissent de nombreuses informations sur l'agriculture à l'échelon communal. Vous avez déjà suivi un TD consacré à l'extraction de ces données précemment. Vous trouverez un fichier .xls dans le dossier "data" du TD informant sur les cultures par commune (RA 2010 pour la Haute-Garonne). Ouvrez ce fichier et prenez connaissance du contenu. Il est possible d'envisager une jointure attributaire comme précédemment pour représenter une variable d'intérêt (ex. superficie cultivée en céréales). Néanmoins, un nettoyage des premières lignes est nécessaire pour un import en .csv facile sous QGIS. Par ailleurs, il faudrait isoler le code communal INSEE (ou le nom de la commune) dans une nouvelle colonne afin de pouvoir réaliser la jointure par la suite.
+
+Supprimez d'abord les premières lignes du fichier .xls afin de ne garder que les en-têtes des colonnes. Ensuite, ajoutez une nouvelle colonne à droite de /Commune dans laquelle le code INSEE sera inséré par extraction d'une chaîne de caractère. Nommez cette colonne INSEE. Utilisez alors la fonction `STXT(*texte*; *début*; *nombre*)` du tableur qui renvoie une chaîne de caractères partielle du *texte* en entrée. Le *texte* représente la référence à la cellule contenant le texte à extraire. Le *début* correspond à la position du premier caractère à extraire dans le *texte*. Le *nombre* précise le nombre de caractères à extraire. Ainsi, l'extraction du code INSEE de la onzième ligne pourrait prendre la forme `=STXT(C11;1;5)`. Une fois la fonction appliquée pour toutes les communes, exportez le fichier en .csv pour un import sous QGIS. Puis, tentez de réaliser une jointure attributaire et de cartographier la surface cultivée en céréales par commune. 
+
+![Opération de jointure attributaire](figures/RA_2010_cultures.png)
 
 
 
