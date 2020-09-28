@@ -211,11 +211,17 @@ Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter
 ![Opération de jointure attributaire](figures/carto_PRA.png)
 
 
+## Les régions climatiques françaises
 
+Une typologie des climats de France métropolitaine a été proposée par [Joly et al. (2010)](https://journals.openedition.org/cybergeo/23155). Elle est basée sur un jeu de 14 variables climatiques relatives aux précipitations et aux températures intégrant une série temporelle de 30 ans (1971-2000). Les données, ainsi que la carte finale, sont disponibles en ligne (voir annexes de la publication).
 
+Téléchargez la typologie des climats français au format `.asc` (format de texte ASCII). Importez le fichier sous QGIS via le panneau `Explorateur > raster`. Que constatez-vous ? Où se situe votre couche (image) importée ? Quel est son SRC ? 
 
+Sous QGIS, le SRC de cette couche est inconnu. Il faut donc revenir à la source (annexes de la publication) pour connaître le système de projection et le déclarer. Après examen, il s'agit de la projection Lambert II étendu. 
 
+Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des types de climat puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections > Projection (warp)` (outil GDAL). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
 
+Alors ? En cas de souci (bienvenue dans le monde de la géomatique...), vous trouverez la couche des types de climat en Lambert 93 dans le dossier "data" du TD. 
 
 
 
