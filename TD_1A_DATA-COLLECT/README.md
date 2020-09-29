@@ -40,11 +40,11 @@ L'IGN a conçu un portail de visualisation de nombreuses sources de données spa
 
 Commencez par rechercher l'EA de Borret. Elle se trouve à Poucharramet en Haute Garonne. Choisissez les photographies aériennes comme fond de carte sur le Geoportail et repérez-vous par rapport à la photo ci-dessous.
 
-![Recherche le siège de l'EA de Borret](figures/Borret.png){ width=50% }
+![Siège de l'EA de Borret à Poucharramet](figures/Borret.png){ width=50% }
 
 Une fois que l'EA est localisée, sélectionnez l'onglet à droite de l'écran correspondant aux outils, puis `Annoter la carte` et placez votre point (siège de l'EA).
 
-![Annoter la carte pour créer le point de votre exploitation](figures/geoportail_annoter.png)
+![Annotez la carte pour créer le point (siège) de votre EA](figures/geoportail_annoter.png)
 
 ![Placez votre point et exportez le résultat](figures/geoportail_ajoutpoint.png)
 
@@ -64,7 +64,7 @@ Après avoir identifé l'EA sur Google Maps, cliquez (bouton droit) sur le lieu 
 
 Enregistrez à présent les coordonnées via un tableur ou directement dans un éditeur de texte au format `csv`:
 
-![Ajouter dans un fichier texte les coordonnées](figures/fichier_csv.png){height=50px}
+![Ajouter dans un fichier texte .csv les coordonnées](figures/fichier_csv.png){height=50px}
 
 
 
@@ -88,11 +88,12 @@ Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez pr
 
 Vérifiez le SRC de votre projet. A-t-il changé ? Il est probable qu'il soit repassé en WGS-84 (EPSG:4326) alors que nous l'avions défini en Lambert-93 (EPSG:2154)... Pourquoi ? Allez dans le menu `Préférences > Options` et sélectionnez l'onglet `SRC`. Par défaut, le SRC peut être (re)défini automatiquement lors de l'ajout de la première couche. Pour éviter cela, vous pouvez choisir le Lambert-93 comme SRC par défaut puis, fermer la fenêtre. Il faut ensuite redéfinir le SRC de votre projet (EPSG:2154).
 
-![Changer les options de SRC pour les projets](figures/src.png){height=50px}
+![Changer les options de SRC pour les projets](figures/src.png){height=150px}
 
-Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`. NB : si le menu `Traitement` n'est pas accessible, allez dans `Extensions > Installer / Gérer les extensions` et activez l'extension `Processing`.
+Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`. 
+NB : si le menu `Traitement` n'est pas accessible, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`.
 
-Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui de votre projet. Cette couche est à enregistrer dans le format [GeoPackage](https://www.geopackage.org/) (extension `gpkg`). Il s'agit d'un format récent, ouvert, et non propriétaire, implémenté sous forme d'une base de données SQLite. Une fois enregistrée, votre couche sera ajoutée dans QGIS. Vous pouvez alors supprimer les précédentes couches en WGS-84.
+Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui de votre projet. Cette couche est à enregistrer dans le format [GeoPackage](https://www.geopackage.org/) (extension `.gpkg`). Il s'agit d'un format récent, ouvert, et non propriétaire, implémenté sous forme d'une base de données SQLite. Une fois enregistrée, votre couche sera ajoutée dans QGIS. Vous pouvez alors supprimer les précédentes couches en WGS-84.
 
 ![Enregistrez votre nouvelle couche au format gpkg](figures/QGIS_gpkg.png){height=100px}
 
@@ -107,7 +108,7 @@ Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il
 
 ### Changer le type d'icône
 
-Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de changer tout ce qui a trait à la représentation de vos données. Sélectionnez `Symbole Simple` et changez le type de symbole en `Symbole SVG`. De nombreux symboles sont disponibles. Il est aussi possible d'importer des fichiers SVG. C'est l'option que nous allons choisir en important un symbole depuis l'URL suivante : [https://www.svgrepo.com/show/228574/silo.svg](https://www.svgrepo.com/show/228574/silo.svg). Modifiez à présent la taille du symbole avec l et h = 10 mm.
+Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de changer tout ce qui a trait à la représentation de vos données. Sélectionnez `Symbole Simple` et changez le type de symbole en `Symbole SVG`. De nombreux symboles sont disponibles. Il est aussi possible d'importer des fichiers SVG. C'est l'option que nous allons choisir en important un symbole depuis l'URL suivante : [https://www.svgrepo.com/show/228574/silo.svg](https://www.svgrepo.com/show/228574/silo.svg). Modifiez à présent la taille du symbole avec largeur et hauteur = 10 mm.
 
 ![Nouveau symbole SVG importé depuis une URL](figures/symbole.png)
 
@@ -126,7 +127,9 @@ Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, O
 
 1. Installer un *plug-in* dédié. Pour cela, dans le menu `Extensions > Installer`, recherchez le *plug-in* `QuickMapServices` et installez-le. Vérifiez ensuite l'installation et les données disponibles par défaut dans le menu `Internet > QuickMapServices`. Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in* et l'onglet `More services`.
 
-2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` (clic bouton droit) avec pour nom "Google Maps" et pour URL `https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D`. Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant : [**https://git.io/fjMJq**](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py). C'est beau la technique... ;-)
+2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` (clic bouton droit) avec pour nom "Google Maps" et pour URL :
+[https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D](https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D). Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant :
+[https://git.io/fjMJq](https://raw.githubusercontent.com/klakar/QGIS_resources/master/collections/Geosupportsystem/python/qgis_basemaps.py). C'est beau la technique... ;-)
 
 ![Flux de fonds de carte gratuits](figures/connexionXYZ.png)
 
@@ -139,8 +142,8 @@ Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de f
 
 L'IGN a également mis en place une liste de *Geoservices*. On peut ainsi accéder à une partie des données du Geoportail via les URL suivantes :
 
-- `https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities` (pour les ressources images)
-- `https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities` (pour les ressources vecteur)
+- [https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities](https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities) (pour les ressources images)
+- [https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities](https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities) (pour les ressources vecteur)
 
 Le WMTS est un [service d'images tuilées](https://geoservices.ign.fr/documentation/geoservices/wmts.html) (Web Map Tile Service). Il contient dans son adresse une clé (= "choisirgeoportail"), définie par l'IGN. Cette clé ne nécessite pas la création d'un compte au préalable. Elle donne directement accès à certaines ressources comme les photographies aériennes, pour un test. Reportez-vous à la [documentation](https://geoservices.ign.fr/documentation/services-acces.html) des *Geoservices* de l'IGN pour davantage de détail.
 
@@ -173,7 +176,7 @@ Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sél
 
 ![Requête SQL pour conserver les communes de Haute-Garonne](figures/requete_sql31.png)
 
-Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la couche COMMUNE > `Exporter` > `Sauvegarder les entités sélectionnées sous...` Choisissez comme `Nom de fichier` votre fichier au format gpkg déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches. Précisez "Communes" pour le `Nom de la couche` et vérifiez que l'option `N'enregistrer que les entités sélectionnées` est bien cochée. Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données gpkg (GeoPackage) contient bien deux couches.
+Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la couche COMMUNE > `Exporter` > `Sauvegarder les entités sélectionnées sous...` Choisissez comme `Nom de fichier` votre fichier au format gpkg déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches. Précisez "Communes" pour le `Nom de la couche` et vérifiez que l'option `N'enregistrer que les` `entités sélectionnées` est bien cochée. Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données gpkg (GeoPackage) contient bien deux couches.
 
 
 ![Couche des communes (31) au format gpkg](figures/geoPackage_dpt.png)
@@ -219,7 +222,7 @@ Téléchargez la typologie des climats français au format `.asc` (format de tex
 
 Sous QGIS, le SRC de cette couche est inconnu. Il faut donc revenir à la source (annexes de la publication) pour connaître le système de projection et le déclarer. Après examen, il s'agit de la projection Lambert II étendu. 
 
-Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des zones climatiques puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections > Projection (warp)` (NB : ce n'est pas le même outil que précédemment car ici, il s'agit d'un raster et non d'un vecteur). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
+Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des zones climatiques puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections` `> Projection (warp)` (NB : ce n'est pas le même outil que précédemment car ici, il s'agit d'un raster et non d'un vecteur). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
 
 Alors ? En cas de souci (bienvenue dans le monde de la géomatique...;-)), vous trouverez la couche des types de climat en Lambert 93 dans le dossier "data" du TD. Il suffit alors d'appliquer une symbologie adaptée (une couleur par catégorie) pour représenter la distribution des différents types.
 
@@ -295,9 +298,13 @@ Pour se déplacer pendant la vectorisation, vous pouvez soit dézoomer (avec la 
 
 L'outil accrochage est indispensable quand on fait de la digitalisation. Si vous ne l'avez pas activé, il va vous manquer car cet outil permet de s'appuyer sur les polygones déjà créés et agit comme un aimant. Si le nouveau point que vous voulez créer est très proche d'un point d'une parcelle existante, alors l'outil accrochage va comprendre qu'il ne faut pas le dupliquer mais l'utiliser. Quel est l'intérêt ? Cela réduit les erreurs. Avec le format GeoPackage, la structure de donnée est *non topologique* (i.e. *spaghetti*). Cette structure ne vous empêche pas de créer des polygones qui se superposent ou qui ne partagent pas le même segment en cas d'adjacence. A première vue, ça peut paraître sans importance mais cela engendre de nombreuses erreurs de calcul par la suite à cause de géométries biaisées (en plus de données redondantes). Il faut donc s'en prémunir au moment de la saisie. 
 
-Afin d'activer la barre d'outils et voir l'icône *aimant* dans votre fenêtre QGIS, cochez : `Vue > Barre d'outils > Accrochage`. Activer l'`édition topologique` et `l'accrochage aux intersections`.
+Afin d'activer la barre d'outils et voir l'icône *aimant* dans votre fenêtre QGIS, cochez :
 
-![Outil accrochage de QGIS](figures/accrochage.png)
+`Vue > Barre d'outils > Accrochage`. 
+
+Activer l'`édition topologique` et `l'accrochage aux intersections`.
+
+![Outil d'accrochage de QGIS](figures/accrochage.png)
 
  
 

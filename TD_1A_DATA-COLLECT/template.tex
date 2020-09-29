@@ -1,0 +1,51 @@
+\documentclass[12]{scrartcl}
+
+\usepackage[T1]{fontenc}  
+\usepackage[utf8]{inputenc} 
+\usepackage{lmodern}
+\usepackage[frenchb]{babel} 
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    allcolors = [rgb]{0.5,0,0}
+}
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{array,longtable}
+\usepackage{booktabs}
+\usepackage[]{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{etoolbox}
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+\expandafter\patchcmd\csname Gin@ii\endcsname
+  {\setkeys {Gin}{#1}}
+  {%
+    \setkeys {Gin}
+      {max width=\textwidth,max height=.5\textwidth,keepaspectratio,#1}%
+  }
+  {}{}
+
+
+\usepackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+\title{DATA-CEVI :\\ Introduction à la collecte de données spatiales avec QGIS}
+\date{}
+\author{M. Lang \& D. Sheeren \\(INP-ENSAT)}
+\maketitle
+\tableofcontents
+\pagebreak
+
+$body$
+\end{document}
+
