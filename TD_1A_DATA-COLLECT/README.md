@@ -270,18 +270,18 @@ Si vous souhaitez représenter le parcellaire de votre exploitation, vous pouvez
 
 Vérifiez dans le menu `Vue > Barre d'outils` que les `Barre d'outils de numérisation`, `Barre d'outils de numérisation avancée` et `accrochage` soient activées. Ensuite :
 
-- Créer un fichier vectoriel de type polygone (au format geopackage)
+- Créez un fichier vectoriel de type polygone (au format geopackage)
 
    	- Menu `Couche > Créer une couche > Nouvelle couche GeoPackage`
 	- Sélectionnez votre fichier gpkg existant au niveau de la `Base de données`
 	- Donnez un nom à votre nouvelle couche : parcellaire
 	- Choisissez bien le type de géométrie `polygone` et la projection `EPSG:2154`.
 
-- Ajouter un champ de type `Nombre entier` et nommez-le `numparcelle`.
+- Ajoutez un champ de type `Nombre entier` et nommez-le `numparcelle`.
 
-- Ajouter un champ de type `Donnée texte` et nommez-le `description`.
+- Ajoutez un champ de type `Donnée texte` et nommez-le `description`.
 
-- Ajouter un champ de type `Donnée texte` et nommez-le `assolement`.
+- Ajoutez un champ de type `Donnée texte` et nommez-le `assolement`.
 
 - Une fois la couche *ajoutée* à votre base (sans l'écraser...), cliquez sur le petit crayon en haut à gauche dans le menu pour commencer à dessiner vos parcelles.
 
