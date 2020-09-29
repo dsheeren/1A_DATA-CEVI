@@ -36,9 +36,9 @@ Nous allons représenter le siège de l'EA de Borret sous forme d'un point en s'
 
 ## Méthode 1 : Export du lieu depuis le Geoportail
 
-L'IGN a conçu un portail de visualisation de nombreuses sources de données spatiales avec quelques fonctionnalités de localisation : [www.geoportail.gouv.fr/](https://www.geoportail.gouv.fr/)
+L'IGN a conçu un portail de visualisation de nombreuses sources de données spatiales avec quelques fonctionnalités de localisation : [www.geoportail.gouv.fr](https://www.geoportail.gouv.fr/)
 
-Commencez par rechercher l'EA de Borret. Elle se trouve à Poucharramet en Haute Garonne. Choisissez les photographies aériennes comme fond de carte sur le Geoportail et repérez-vous par rapport à la photo ci-dessous.
+Commencez par rechercher l'EA de Borret. Elle se trouve à Poucharramet en Haute-Garonne. Choisissez les photographies aériennes comme fond de carte sur le Geoportail et repérez-vous par rapport à la photo ci-dessous.
 
 ![Siège de l'EA de Borret à Poucharramet](figures/Borret.png){ width=50% }
 
@@ -54,9 +54,9 @@ Votre point peut être exporté au format `kml` (depuis le menu `Annoter la cart
 
 ## Méthode 2 : import des coordonnées depuis un csv
 
-Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format CSV est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit). 
+Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format `csv` est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit). 
 
-Pour obtenir les coordonnées X et Y du siège de l'EA, vous pouvez utiliser le Géoportail (onglet `outils > Afficher les cooronnées`). Plusieurs SRC sont proposés ce qui est intéressant. Cette source est très fiable. Une alternative est de passer par Google Maps. C'est ce que nous allons choisir ici pour l'exemple. 
+Pour obtenir les coordonnées X et Y du siège de l'EA, vous pouvez utiliser le Géoportail (onglet `outils > Afficher les coordonnées`). Plusieurs SRC sont proposés ce qui est intéressant. Cette source est très fiable. Une alternative est de passer par Google Maps. C'est ce que nous allons choisir ici pour l'exemple. 
 
 Après avoir identifé l'EA sur Google Maps, cliquez (bouton droit) sur le lieu d'intérêt en sélectionnant ensuite l'option `Plus d'infos sur cet endroit` dans la fenêtre. Les coordonnées géographiques apparaissent en dégrés décimaux (EPSG:4326), dans l'ordre Y (latitude) et X (longitude). :warning: Cet ordre est une **source d'erreurs fréquentes** dans les imports...
 
@@ -86,7 +86,7 @@ Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez pr
 
 ## Rendre cohérent le SRC de la couche avec celui du projet
 
-Vérifiez le SRC de votre projet. A-t-il changé ? Il est probable qu'il soit repassé en WGS-84 (EPSG:4326) alors que nous l'avions défini en Lambert-93 (EPSG:2154)... Pourquoi ? Allez dans le menu `Préférences > Options` et sélectionnez l'onglet `SRC`. Par défaut, le SRC peut être (re)défini automatiquement lors de l'ajout de la première couche. Pour éviter cela, vous pouvez choisir le Lambert-93 comme SRC par défaut puis, fermer la fenêtre. Il faut ensuite redéfinir le SRC de votre projet (EPSG:2154).
+Vérifiez le SRC de votre projet. A-t'il changé ? Il est probable qu'il soit repassé en WGS-84 (EPSG:4326) alors que nous l'avions défini en Lambert-93 (EPSG:2154)... Pourquoi ? Allez dans le menu `Préférences > Options` et sélectionnez l'onglet `SRC`. Par défaut, le SRC peut être (re)défini automatiquement lors de l'ajout de la première couche. Pour éviter cela, vous pouvez choisir le Lambert-93 comme SRC par défaut puis, fermer la fenêtre. Il faut ensuite redéfinir le SRC de votre projet (EPSG:2154).
 
 ![Changer les options de SRC pour les projets](figures/src.png){height=150px}
 
@@ -101,7 +101,7 @@ Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui 
 
 ## Ajouter le nom de votre exploitation
 
-Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il va falloir le modifier. Cliquez (bouton droit) sur la couche et sélectionnez `Ouvrir la table d'attributs`. Par défaut vous ne pouvez pas modifier le contenu des champs (le fichier est en mode *lecture*). Pour permettre l'édition (mode *écriture*), il faut activer le crayon en haut à gauche de la fenêtre. Vous pouvez alors reneigner le nom de votre exploitation agricole dans la colonne `Nom` (ex. Borret). Une fois l'édition terminée, désactivez le crayon. 
+Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il va falloir le modifier. Cliquez (bouton droit) sur la couche et sélectionnez `Ouvrir la table d'attributs`. Par défaut vous ne pouvez pas modifier le contenu des champs (le fichier est en mode *lecture*). Pour permettre l'édition (mode *écriture*), il faut activer le crayon en haut à gauche de la fenêtre. Vous pouvez alors renseigner le nom de votre exploitation agricole dans la colonne `Nom` (ex. Borret). Une fois l'édition terminée, désactivez le crayon. 
 
 
 ## Modifier l'affichage de votre exploitation
@@ -166,17 +166,17 @@ Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/A
 
 ### Requête attributaire
 
-Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sélectionner que les communes de la Haute-Garonne (31). Pour cela, depuis la table attributaire, dans la barre d'outils, cliquez sur l'icône `Sélectionner les entités en utilisant une expression`. Appliquez ensuite la procédure suivante :
+Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sélectionner que les communes de la Haute-Garonne (31). Pour cela, depuis la table attributaire, dans la barre d'outils, cliquez sur l'icône `Sélectionner les entités en utilisant` `une expression`. Appliquez ensuite la procédure suivante :
 
 - Cliquez sur `Champs et valeurs` (colonne du milieu) pour voir la liste des champs de la table (i.e. les attributs)
 - Double-cliquez sur le champ INSEE_DEP ; apparition dans la case `Expression` à gauche de la fenêtre (notez les guillemets doubles)
 - Cliquez sur l'opérateur =
-- Rajouter le numéro de département 31 
-- Lancer la requête en cliquant sur le bouton `Sélectionner des entités` en bas de la fenêtre
+- Rajoutez le numéro de département 31 
+- Lancez la requête en cliquant sur le bouton `Sélectionner des entités` en bas de la fenêtre
 
 ![Requête SQL pour conserver les communes de Haute-Garonne](figures/requete_sql31.png)
 
-Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la couche COMMUNE > `Exporter` > `Sauvegarder les entités sélectionnées sous...` Choisissez comme `Nom de fichier` votre fichier au format gpkg déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches. Précisez "Communes" pour le `Nom de la couche` et vérifiez que l'option `N'enregistrer que les` `entités sélectionnées` est bien cochée. Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données gpkg (GeoPackage) contient bien deux couches.
+Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la couche COMMUNE puis `Exporter` > `Sauvegarder les entités sélectionnées sous...` Choisissez comme `Nom de fichier` votre fichier au format `gpkg` déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches. Précisez "Communes" pour le `Nom de la couche` et vérifiez que l'option `N'enregistrer que les` `entités sélectionnées` est bien cochée. Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données `gpkg` (GeoPackage) contient bien deux couches.
 
 
 ![Couche des communes (31) au format gpkg](figures/geoPackage_dpt.png)
@@ -201,14 +201,14 @@ Allez dans les `Propriétés` de la couche COMMUNE, onglet `Jointures`. Cliquez 
 
 Que constatez-vous dans la table des communes après jointure ? Toutes les informations de l'autre table ont été importées (temporairement). 
 
-> **A noter** : le sens de la jointure a une importance. Il ne doit pas être laissé au hasard. La cible doit être le fichier dans lequel vous souhaitez rapatrier l'information. 
+> **A noter** : le sens de la jointure a une importance. La cible doit être le fichier dans lequel vous souhaitez rapatrier l'information. 
 
 Nous avons de la chance. Les noms de communes dans les deux tables sont strictement identiques (accent, orthographe...) ce qui nous a évité d'avoir des erreurs. Ce n'est pas toujours le cas... Nous avons également récupéré une colonne correspondant au libellé de la PRA. Nous allons pouvoir le cartographier. 
 
 
 ### Cartographie de la valeur d'un champ
 
-Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter spatialement. Pour cela, allez dans les `Propriétés` de la couche COMMUNE (avec la jointure), onglet `Symbologie`. Nous souhaitons réaliser une symbologie qui varie selon les différentes valeurs de PRA. Le symbole est donc `Catégorisé` en fonction d'une `valeur` correspondant au champ `PRA_Lib` (libellé). Demander de `Classer` (bouton en bas à gauche) pour affecter une couleur à chaque modalité. Adaptez si besoin les couleurs et appliquez. 
+Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter spatialement. Pour cela, allez dans les `Propriétés` de la couche COMMUNE (avec la jointure), onglet `Symbologie`. Nous souhaitons réaliser une symbologie qui varie selon les différentes valeurs de PRA. Le symbole est donc `Catégorisé` en fonction d'une `valeur` correspondant au champ `PRA_Lib` (libellé). Demandez de `Classer` (bouton en bas à gauche) pour affecter une couleur à chaque modalité. Adaptez si besoin les couleurs et appliquez. 
 
 
 ![Opération de jointure attributaire](figures/carto_PRA.png)
@@ -240,11 +240,11 @@ Supprimez d'abord les premières lignes du fichier .xls afin de ne garder que le
 
 ## Afficher les unités géologiques (BRGM)
 
-Rendez-vous sur le site [http://infoterre.brgm.fr/](http://infoterre.brgm.fr/). Nous allons rechercher l'adresse du service web permettant d'afficher les données géologiques sous forme de flux. Allez dans le menu `Données et Services > Geoservices OGC`. Repérez l'URL du service WMS et WFS 'Geologie'. Notez que d'autres services sont disponibles, sur les risques naturels et industriels notamment.
+Rendez-vous sur le site [http://infoterre.brgm.fr/](http://infoterre.brgm.fr/). Nous allons rechercher l'adresse du service Web permettant d'afficher les données géologiques sous forme de flux. Allez dans le menu `Données et Services > Geoservices OGC`. Repérez l'URL du service WMS et WFS 'Geologie'. Notez que d'autres services sont disponibles, sur les risques naturels et industriels notamment.
 
-Sous QGIS, sélectionnez `WFS` dans le panneau `Explorateur`. Créez une nouvelle connexion ayant pour nom 'Geologie' avec l'URL du service ([http://geoservices.brgm.fr/geologie](http://geoservices.brgm.fr/geologie)). Connectez-vous ensuite au flux pour voir apparaître les différents jeux de données disponibles. Vous pouvez afficher la carte lithologique simplifiée au 1/1 000 000. Quel est le mode de représentation des données ? raster ou vecteur ? 
+Sous QGIS, sélectionnez `WFS` dans le panneau `Explorateur`. Créez une nouvelle connexion ayant pour nom 'Geologie' avec l'URL [http://geoservices.brgm.fr/geologie](http://geoservices.brgm.fr/geologie). Connectez-vous ensuite au flux pour voir apparaître les différents jeux de données disponibles. Vous pouvez afficher la carte lithologique simplifiée au 1/1 000 000. Quel est le mode de représentation des données ? raster ou vecteur ? 
 
-Vous pouvez utiliser l'outil d'identification (l'icône du curseur qui pointe sur un petit _i_) pour connaître la nature de l'unité géologique en cliquant sur les objets. Toutefois, la description est très simplifiée. Une version plus complète est disponible avec le flux WFS spécifiquement dédié à la carte géologique : [http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&](http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&). :warning: Pensez également à prendre connaissance des **notices** associées à ces cartes. 
+Vous pouvez utiliser l'outil d'identification (icône du curseur qui pointe sur un petit _i_) pour connaître la nature de l'unité géologique en cliquant sur les objets. Toutefois, la description est très simplifiée. Une version plus complète est disponible avec le flux WFS spécifiquement dédié à la carte géologique : [http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&](http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&). :warning: Pensez également à prendre connaissance des **notices** associées à ces cartes. 
 
 Pour une représentation plus détaillée de la géologie, c'est plutôt la version au 1/50 000 qu'il faut consulter. Depuis quelques temps, le BRGM rend possible le téléchargement des cartes géologiques départementales vectorisées et harmonisées au 1/50 000 (BD Charm-50) sur [son site](https://infoterre.brgm.fr/page/telechargement-cartes-geologiques) au format `shp`. 
 
@@ -257,7 +257,7 @@ Pour une visualisation fluide des différentes échelles, vous pouvez aussi util
 
 ## Accéder au référentiel hydrographique (Sandre)
 
-C'est le [Sandre](http://www.sandre.eaufrance.fr/) (Service d'administration nationale des données et référentiels sur l'eau) qui propose différents flux. Pour l'accès au cours d'eau, le service WFS est le suivant : `http://services.sandre.eaufrance.fr/geo/eth_FXX?VERSION=1.1.0`
+C'est le [Sandre](http://www.sandre.eaufrance.fr/) (Service d'administration nationale des données et référentiels sur l'eau) qui propose différents flux. Pour l'accès au cours d'eau, le service WFS est le suivant : [http://services.sandre.eaufrance.fr/geo/eth_FXX?VERSION=1.1.0](http://services.sandre.eaufrance.fr/geo/eth_FXX?VERSION=1.1.0)
 
 
 
