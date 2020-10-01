@@ -168,6 +168,8 @@ Nous allons d'abord télécharger les communes de Haute-Garonne à partir de la 
 
 Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/ADMIN-EXPRESS_2-4__SHP__FRA_L93_2020-09-15.7z)) l'édition 2020 par territoire. Décompressez ensuite l'archive .7z et recherchez la couche COMMUNE au format .shp (projection Lambert-93). Importez-là sous QGIS. Prenez connaissance de la représentation cartographique et du contenu de la table attributaire (clic droit sur la couche > `Ouvrir la table d'attributs`)
 
+**ASTUCE :** Il est possible que vous ne puissiez pas dé-zipper l'archive téléchargée. Si c'est le cas, téléchargez l'utilitaire 7-zip sur le site https://www.7-zip.fr/.
+
 ### Requête attributaire
 
 Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sélectionner que les communes de la Haute-Garonne (31). Pour cela, depuis la table attributaire, dans la barre d'outils, cliquez sur l'icône `Sélectionner les entités en utilisant` `une expression`. Appliquez ensuite la procédure suivante :
