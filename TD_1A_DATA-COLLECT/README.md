@@ -95,7 +95,7 @@ Vérifiez le SRC de votre projet. A-t'il changé ? Il est probable qu'il soit re
 Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`.
 NB : si le menu `Traitement` n'est pas accessible, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`.
 
-Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui de votre projet. Cette couche est à enregistrer dans le format [GeoPackage](https://www.geopackage.org/) (extension `.gpkg`). Il s'agit d'un format récent, ouvert, et non propriétaire, implémenté sous forme d'une base de données SQLite. Une fois enregistrée, votre couche sera ajoutée dans QGIS. Vous pouvez alors supprimer les précédentes couches en WGS-84.
+Le SRC cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui de votre projet. Cette couche est à enregistrer dans le format [GeoPackage](https://www.geopackage.org/) (extension `.gpkg`). Il s'agit d'un format récent, ouvert, et non propriétaire, implémenté sous forme d'une base de données SQLite. Une fois enregistrée, votre couche sera ajoutée dans QGIS. Vous pouvez alors supprimer les précédentes couches en WGS-84.
 
 ![Enregistrez votre nouvelle couche au format gpkg](figures/QGIS_gpkg.png){height=100px}
 
@@ -114,7 +114,7 @@ Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de chang
 
 ![Nouveau symbole SVG importé depuis une URL](figures/symbole_precision.png)
 
-**ASTUCE** : pour importer le fichier SVG depuis une URL, il faut afficher le menu déroulant (en rouge sur la figure ci-dessus), et non pas taper directement l'URL.
+**ASTUCE** : pour importer le fichier SVG depuis une URL, il faut afficher le menu déroulant (en rouge sur la figure ci-dessus), et non taper directement l'URL.
 
 ### Afficher le nom de l'EA (étiquette)
 
@@ -129,13 +129,11 @@ Quand on dispose d'un fond cartographique (ex. photographie aérienne, carte top
 
 Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, OpenStreetMap). Deux solutions pour y accéder :
 
-1. Installer un *plug-in* dédié. Pour cela, dans le menu `Extensions > Installer`, recherchez le *plug-in* `QuickMapServices` et installez-le. Vérifiez ensuite l'installation et les données disponibles par défaut dans le menu `Internet > QuickMapServices`.
+1. Installer un *plug-in* dédié. Pour cela, dans le menu `Extensions > Installer`, recherchez le *plug-in* `QuickMapServices` et installez-le. Vérifiez ensuite l'installation et les données disponibles par défaut dans le menu `Internet > QuickMapServices`. Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in*, onglet `More services` et bouton `Get contributed pack`.
 
-<!-- Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in* et l'onglet `More services`. -->
+**ASTUCE 1** : il est possible qu'un message d'erreur s'affiche lors de l'activation de l'extension. Il faut probablement fermer QGIS puis le re-ouvrir pour activer l'extension sans erreur. 
 
-**ASTUCE n° 1** : il est possible qu'un message d'erreur s'affiche lors de l'activation de l'extension. Il vous faut probablement fermer QGIS puis le re-ouvrir pour activer l'extension sans erreur.  
-
-**ASTUCE n° 2** : les fonds cartographiques ne s'affichent pas pour des grandes échelles. Si rien ne s'affiche après l'import d'un fond, vérifiez votre échelle (en rouge sur la figure ci-dessous), et modifiez là le cas échéant.
+**ASTUCE 2** : les fonds cartographiques ne s'affichent pas pour des grandes échelles. Si rien ne s'affiche après l'import d'un fond, vérifiez votre échelle (en rouge sur la figure ci-dessous), et modifiez là le cas échéant (ou dézoomer).
 
 ![](figures/echelle.png)
 
