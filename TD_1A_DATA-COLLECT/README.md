@@ -19,7 +19,7 @@ Les informations relatives à ce SRC sont accessibles depuis la barre d'état de
 
 Nous allons changer de SRC pour travailler dans le système de référence officiel de la France métropolitaine : la projection Lambert-93. Nom de code : EPSG:2154. Elle est liée au système géodésique RGF93. Les coordonnées sont définies en mètres. Si vous souhaitez en savoir plus sur la projection Lambert, reportez-vous à cette [page dédiée](https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert).
 
-- Dans l'onglet `SCR` de la fenêtre `Propriété du projet`, recherchez `2154` (code EPSG de la projection) via le filtre. Une fois la projection sélectionnée et le changement appliqué, vous pouvez vérifier qu'il est effectif dans la barre d'état du projet (en bas à droite de la fenêtre QGIS) :
+- Dans l'onglet `SCR` de la fenêtre `Propriété du projet`, recherchez `EPSG:2154` (code EPSG de la projection) via le filtre. Une fois la projection sélectionnée et le changement appliqué, vous pouvez vérifier qu'il est effectif dans la barre d'état du projet (en bas à droite de la fenêtre QGIS) :
 
 ![SCR actuel dans QGIS : EPSG:2154](figures/EPSG2154.png)
 
@@ -88,7 +88,9 @@ Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez pr
 
 Vérifiez le SRC de votre projet. A-t'il changé ? Il est probable qu'il soit repassé en WGS-84 (EPSG:4326) alors que nous l'avions défini en Lambert-93 (EPSG:2154)... Pourquoi ? Allez dans le menu `Préférences > Options` et sélectionnez l'onglet `SRC`. Par défaut, le SRC peut être (re)défini automatiquement lors de l'ajout de la première couche. Pour éviter cela, vous pouvez choisir le Lambert-93 comme SRC par défaut puis, fermer la fenêtre. Il faut ensuite redéfinir le SRC de votre projet (EPSG:2154).
 
-![Changer les options de SRC pour les projets](figures/src.png){height=150px}
+![Changer les options de SRC pour les projets](figures/src_precision.png){height=150px}
+
+**ASTUCE** : Si le src n'est pas disponible dans la liste déroulante, vous pouvez le chercher en cliquant sur le bouton `Sélectionner le SRC`.
 
 Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`.
 NB : si le menu `Traitement` n'est pas accessible, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`.
@@ -112,7 +114,7 @@ Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de chang
 
 ![Nouveau symbole SVG importé depuis une URL](figures/symbole_precision.png)
 
-**ASTUCE** : pour importer le fichier SVG depuis une URL, il faut afficher le menu déroulant (en rouge sur la figure ci-dessus), et non pas taper directement l'URL. 
+**ASTUCE** : pour importer le fichier SVG depuis une URL, il faut afficher le menu déroulant (en rouge sur la figure ci-dessus), et non pas taper directement l'URL.
 
 ### Afficher le nom de l'EA (étiquette)
 
