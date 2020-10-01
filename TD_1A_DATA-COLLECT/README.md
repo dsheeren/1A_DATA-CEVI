@@ -90,7 +90,7 @@ Vérifiez le SRC de votre projet. A-t'il changé ? Il est probable qu'il soit re
 
 ![Changer les options de SRC pour les projets](figures/src_precision.png){height=150px}
 
-**ASTUCE** : Si le src n'est pas disponible dans la liste déroulante, vous pouvez le chercher en cliquant sur le bouton `Sélectionner le SRC`.
+**ASTUCE** : Si le src n'est pas disponible dans la liste déroulante, vous pouvez le chercher en cliquant sur le bouton `Sélectionner le SRC` (en rouge sur la figure ci-dessus).
 
 Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`.
 NB : si le menu `Traitement` n'est pas accessible, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`.
@@ -133,7 +133,11 @@ Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, O
 
 <!-- Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in* et l'onglet `More services`. -->
 
-**ASTUCE** : il est possible qu'un message d'erreur s'affiche lors de l'activation de l'extension. Il vous faut probablement fermer QGIS puis le re-ouvrir pour activer l'extension sans erreur.  
+**ASTUCE n° 1** : il est possible qu'un message d'erreur s'affiche lors de l'activation de l'extension. Il vous faut probablement fermer QGIS puis le re-ouvrir pour activer l'extension sans erreur.  
+
+**ASTUCE n° 2** : les fonds cartographiques ne s'affichent pas pour des grandes échelles. Si rien ne s'affiche après l'import d'un fond, vérifiez votre échelle (en rouge sur la figure ci-dessous), et modifiez là le cas échéant.
+
+![](figures/echelle.png)
 
 2. Se conncecter à un service de tuile XYZ. Pour cela, sélectionnez `XYZ Tiles` dans le panneau `Explorateur` de QGIS. Ensuite, créez une `nouvelle connexion` (clic bouton droit) avec pour nom "Google Maps" et pour URL :
 [https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D](https://mt1.google.com/vt/lyrs=m&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D). Le flux est maintenant disponible et vous pouvez l'exploiter. Pour importer une liste prédéfinie de flux utiles, vous pouvez exécuter un script python dans la console QGIS (`Ctrl+Alt+P`) en copiant-collant les lignes du fichier suivant :
