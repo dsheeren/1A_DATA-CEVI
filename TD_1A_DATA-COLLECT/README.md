@@ -1,8 +1,8 @@
-# Objectif 
+# Objectif
 
 Dans ce TD, vous allez apprendre à collecter des données spatiales provenant de différentes sources. Elles seront utiles pour réaliser le diagnostic de l'environnement naturel autour de votre exploitation agricole (cf. UE "Analyse et Diagnostic d'un agroécosystème"). Nous allons rassembler différentes données au niveau de la petite région agricole (PRA) ainsi qu'au niveau de l'exploitation elle-même (EA).
 
-Pour cet exercice, l'exploitation agricole de Borret (ancien domaine de l'ENSAT) sera utilisée comme exemple. 
+Pour cet exercice, l'exploitation agricole de Borret (ancien domaine de l'ENSAT) sera utilisée comme exemple.
 
 
 # Créer un nouveau projet QGIS
@@ -11,7 +11,7 @@ Nous allons enregistrer toutes les données dans un nouveau projet QGIS qui aura
 Sous QGIS : `Projet > Nouveau`.
 
 
-Par défaut, le Système de Coordonnées de Référence (SRC) d'un projet QGIS est celui du système de référence mondial WGS-84 (celui du système GPS), nom de code EPSG:4326. Le système de référence du projet est toujours affiché en bas à droite de la fenêtre de QGIS. Vous devriez avoir le SRC suivant : 
+Par défaut, le Système de Coordonnées de Référence (SRC) d'un projet QGIS est celui du système de référence mondial WGS-84 (celui du système GPS), nom de code EPSG:4326. Le système de référence du projet est toujours affiché en bas à droite de la fenêtre de QGIS. Vous devriez avoir le SRC suivant :
 
 ![SCR actuel dans QGIS : EPSG:4326](figures/EPSG4326.png)
 
@@ -54,9 +54,9 @@ Votre point peut être exporté au format `kml` (depuis le menu `Annoter la cart
 
 ## Méthode 2 : import des coordonnées depuis un csv
 
-Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format `csv` est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit). 
+Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geoportail. Elle consiste à lire les coordonnées du siège de l'EA et les enregistrer dans un fichier au format CSV (*comma-separated values*) qu'il sera possible d'importer sous QGIS. Le format `csv` est très simple. Il correspond à un tableau décrit sous forme de texte : chaque ligne de texte correspond à une ligne du tableau et chaque virgule correspond au séparateur entre les colonnes. Vous pouvez le créer depuis un tableur (type Excel ou LibreOffice Calc) ou directement depuis un éditeur de texte (type notepad ou gedit).
 
-Pour obtenir les coordonnées X et Y du siège de l'EA, vous pouvez utiliser le Géoportail (onglet `outils > Afficher les coordonnées`). Plusieurs SRC sont proposés ce qui est intéressant. Cette source est très fiable. Une alternative est de passer par Google Maps. C'est ce que nous allons choisir ici pour l'exemple. 
+Pour obtenir les coordonnées X et Y du siège de l'EA, vous pouvez utiliser le Géoportail (onglet `outils > Afficher les coordonnées`). Plusieurs SRC sont proposés ce qui est intéressant. Cette source est très fiable. Une alternative est de passer par Google Maps. C'est ce que nous allons choisir ici pour l'exemple.
 
 Après avoir identifé l'EA sur Google Maps, cliquez (bouton droit) sur le lieu d'intérêt en sélectionnant ensuite l'option `Plus d'infos sur cet endroit` dans la fenêtre. Les coordonnées géographiques apparaissent en dégrés décimaux (EPSG:4326), dans l'ordre Y (latitude) et X (longitude). :warning: Cet ordre est une **source d'erreurs fréquentes** dans les imports...
 
@@ -74,13 +74,13 @@ Pour importer un fichier, il faut passer par le `Gestionnaire des sources de don
 
 ![Charger une couche dans QGIS](figures/QGIS_charger.png){height=150px}
 
-- Si vous avez opté pour la méthode 1, sélectionnez l'onglet `Vecteur` depuis le gestionnaire des couches et recherchez votre fichier `kml` comme source à importer (NB : le "glisser/déposer" peut aussi se pratiquer). 
+- Si vous avez opté pour la méthode 1, sélectionnez l'onglet `Vecteur` depuis le gestionnaire des couches et recherchez votre fichier `kml` comme source à importer (NB : le "glisser/déposer" peut aussi se pratiquer).
 
-- Si vous avez opté pour la méthode 2, sélectionnez l'onglet `Texte Délimité` et recherchez votre fichier `csv` comme nom à importer. 
-:warning: Pensez à bien préciser la géométrie souhaitée. Il s'agit ici de créer un object ponctuel à partir des coordonnées (X,Y) enregistrées. Ainsi, il faut apparier vos colonnes du fichier avec les champs X et Y en choisissant une géométrie `point`. 
+- Si vous avez opté pour la méthode 2, sélectionnez l'onglet `Texte Délimité` et recherchez votre fichier `csv` comme nom à importer.
+:warning: Pensez à bien préciser la géométrie souhaitée. Il s'agit ici de créer un object ponctuel à partir des coordonnées (X,Y) enregistrées. Ainsi, il faut apparier vos colonnes du fichier avec les champs X et Y en choisissant une géométrie `point`.
 :warning: Ne pas oublier de préciser également dans quel SRC sont enregistrées vos coordonnées. Ici, le `SRC de la géométrie` a pour code EPSG:4326.
 
-Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez prendre connaissance de ses propriétés pour les contrôler (clic droit sur le nom de la couche > `Propriétés`). Dans l'onglet `Information`, vérifiez le SRC : `EPSG:4326`. Fermez ensuite la fenêtre. 
+Une nouvelle couche contenant votre point est ajoutée au projet. Vous pouvez prendre connaissance de ses propriétés pour les contrôler (clic droit sur le nom de la couche > `Propriétés`). Dans l'onglet `Information`, vérifiez le SRC : `EPSG:4326`. Fermez ensuite la fenêtre.
 
 
 
@@ -90,7 +90,7 @@ Vérifiez le SRC de votre projet. A-t'il changé ? Il est probable qu'il soit re
 
 ![Changer les options de SRC pour les projets](figures/src.png){height=150px}
 
-Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`. 
+Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`.
 NB : si le menu `Traitement` n'est pas accessible, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`.
 
 Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui de votre projet. Cette couche est à enregistrer dans le format [GeoPackage](https://www.geopackage.org/) (extension `.gpkg`). Il s'agit d'un format récent, ouvert, et non propriétaire, implémenté sous forme d'une base de données SQLite. Une fois enregistrée, votre couche sera ajoutée dans QGIS. Vous pouvez alors supprimer les précédentes couches en WGS-84.
@@ -101,7 +101,7 @@ Le SCR cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui 
 
 ## Ajouter le nom de votre exploitation
 
-Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il va falloir le modifier. Cliquez (bouton droit) sur la couche et sélectionnez `Ouvrir la table d'attributs`. Par défaut vous ne pouvez pas modifier le contenu des champs (le fichier est en mode *lecture*). Pour permettre l'édition (mode *écriture*), il faut activer le crayon en haut à gauche de la fenêtre. Vous pouvez alors renseigner le nom de votre exploitation agricole dans la colonne `Nom` (ex. Borret). Une fois l'édition terminée, désactivez le crayon. 
+Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il va falloir le modifier. Cliquez (bouton droit) sur la couche et sélectionnez `Ouvrir la table d'attributs`. Par défaut vous ne pouvez pas modifier le contenu des champs (le fichier est en mode *lecture*). Pour permettre l'édition (mode *écriture*), il faut activer le crayon en haut à gauche de la fenêtre. Vous pouvez alors renseigner le nom de votre exploitation agricole dans la colonne `Nom` (ex. Borret). Une fois l'édition terminée, désactivez le crayon.
 
 
 ## Modifier l'affichage de votre exploitation
@@ -110,11 +110,13 @@ Si vous n'avez pas le nom de votre exploitation dans votre fichier vectoriel, il
 
 Dans les `Propriétés` de la couche, l'onglet `Symbologie` vous permet de changer tout ce qui a trait à la représentation de vos données. Sélectionnez `Symbole Simple` et changez le type de symbole en `Symbole SVG`. De nombreux symboles sont disponibles. Il est aussi possible d'importer des fichiers SVG. C'est l'option que nous allons choisir en important un symbole depuis l'URL suivante : [https://www.svgrepo.com/show/228574/silo.svg](https://www.svgrepo.com/show/228574/silo.svg). Modifiez à présent la taille du symbole avec largeur et hauteur = 10 mm.
 
-![Nouveau symbole SVG importé depuis une URL](figures/symbole.png)
+![Nouveau symbole SVG importé depuis une URL](figures/symbole_precision.png)
+
+**ASTUCE** : pour importer le fichier SVG depuis une URL, il faut afficher le menu déroulant (en rouge sur la figure ci-dessus), et non pas taper directement l'URL. 
 
 ### Afficher le nom de l'EA (étiquette)
 
-En restant dans les `Propriétés` de la couche, sélectionnez l'onglet `Étiquettes`. Choisissez `Étiquettes simples` avec comme valeur celle du champ `Nom`. En adoptant une position `cartographique`, appliquez une `distance de décalage` pour cette étiquette `à partir de l'emprise du symbole`. Le nom de l'exploitation doit désormais apparaître sur la carte après application. 
+En restant dans les `Propriétés` de la couche, sélectionnez l'onglet `Étiquettes`. Choisissez `Étiquettes simples` avec comme valeur celle du champ `Nom`. En adoptant une position `cartographique`, appliquez une `distance de décalage` pour cette étiquette `à partir de l'emprise du symbole`. Le nom de l'exploitation doit désormais apparaître sur la carte après application.
 
 
 # Ajouter un fond cartographique
@@ -133,7 +135,7 @@ Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, O
 
 ![Flux de fonds de carte gratuits](figures/connexionXYZ.png)
 
-> **A noter** : les données accessibles sont définies dans un système de projection dit pseudo-Mercator (EPSG:3857). Il est différent du SRC de votre projet. QGIS applique donc une reprojection à la volée pour que tout se passe bien. 
+> **A noter** : les données accessibles sont définies dans un système de projection dit pseudo-Mercator (EPSG:3857). Il est différent du SRC de votre projet. QGIS applique donc une reprojection à la volée pour que tout se passe bien.
 
 Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de fournisseurs de tuiles dans la partie `XYZ Tiles`. Double-cliquez sur `Google Satellite` pour avoir uniquement une image en fond.
 
@@ -171,7 +173,7 @@ Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sél
 - Cliquez sur `Champs et valeurs` (colonne du milieu) pour voir la liste des champs de la table (i.e. les attributs)
 - Double-cliquez sur le champ INSEE_DEP ; apparition dans la case `Expression` à gauche de la fenêtre (notez les guillemets doubles)
 - Cliquez sur l'opérateur =
-- Rajoutez le numéro de département 31 
+- Rajoutez le numéro de département 31
 - Lancez la requête en cliquant sur le bouton `Sélectionner des entités` en bas de la fenêtre
 
 ![Requête SQL pour conserver les communes de Haute-Garonne](figures/requete_sql31.png)
@@ -186,12 +188,12 @@ Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la 
 
 Les Régions Agricoles (RA) constituent un zonage d'agriculture homogène composé d'un ensemble de communes. Le croisement avec les limites départementales conduit aux Petites Régions Agricole (PRA). Ce découpage a été initialisé en 1946 et actualisé par la suite. La liste des PRA est accessible sur [le site du service statistique ministériel de l'agriculture](https://agreste.agriculture.gouv.fr/agreste-web/methodon/Z.1/!searchurl/listeTypeMethodon/) (agreste). Le référentiel date de 2017. Il s'agit d'un fichier .xls à télécharger.
 
-Après téléchargement, supprimez les premières lignes de ce fichier pour qu'il démarre par les en-têtes des colonnes. Enregistrez ensuite ce fichier au format texte `.csv` (avec une virgule comme séparateur de champ). Importez ce fichier sous QGIS comme précédemment (cf. `Texte Délimité`) en cochant l'option `Pas de géométrie` (juste la table). 
+Après téléchargement, supprimez les premières lignes de ce fichier pour qu'il démarre par les en-têtes des colonnes. Enregistrez ensuite ce fichier au format texte `.csv` (avec une virgule comme séparateur de champ). Importez ce fichier sous QGIS comme précédemment (cf. `Texte Délimité`) en cochant l'option `Pas de géométrie` (juste la table).
 
 
 ### Jointure attributaire
 
-Sous cette forme, il n'est pas possible de spatialiser les PRA puisqu'il s'agit d'une table. Pour y parvenir, une *jointure* attributaire avec la couche des communes peut être réalisée. Cela nécessite de vérifier qu'il y a champ commun dans les deux tables pour les relier et c'est le cas : le nom des communes ! 
+Sous cette forme, il n'est pas possible de spatialiser les PRA puisqu'il s'agit d'une table. Pour y parvenir, une *jointure* attributaire avec la couche des communes peut être réalisée. Cela nécessite de vérifier qu'il y a champ commun dans les deux tables pour les relier et c'est le cas : le nom des communes !
 
 Allez dans les `Propriétés` de la couche COMMUNE, onglet `Jointures`. Cliquez sur le symbole + pour ajouter une jointure. La `couche à joindre` est le référentiel PRA. Le `champ de jointure` dans le fichier PRA est `LIBGEO` correspondant au nom des communes. Le `champ dans la couche cible` est `NOM_COMM`. Appliquez.
 
@@ -199,16 +201,16 @@ Allez dans les `Propriétés` de la couche COMMUNE, onglet `Jointures`. Cliquez 
 ![Opération de jointure attributaire](figures/jointure.png)
 
 
-Que constatez-vous dans la table des communes après jointure ? Toutes les informations de l'autre table ont été importées (temporairement). 
+Que constatez-vous dans la table des communes après jointure ? Toutes les informations de l'autre table ont été importées (temporairement).
 
-> **A noter** : le sens de la jointure a une importance. La cible doit être le fichier dans lequel vous souhaitez rapatrier l'information. 
+> **A noter** : le sens de la jointure a une importance. La cible doit être le fichier dans lequel vous souhaitez rapatrier l'information.
 
-Nous avons de la chance. Les noms de communes dans les deux tables sont strictement identiques (accent, orthographe...) ce qui nous a évité d'avoir des erreurs. Ce n'est pas toujours le cas... Nous avons également récupéré une colonne correspondant au libellé de la PRA. Nous allons pouvoir le cartographier. 
+Nous avons de la chance. Les noms de communes dans les deux tables sont strictement identiques (accent, orthographe...) ce qui nous a évité d'avoir des erreurs. Ce n'est pas toujours le cas... Nous avons également récupéré une colonne correspondant au libellé de la PRA. Nous allons pouvoir le cartographier.
 
 
 ### Cartographie de la valeur d'un champ
 
-Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter spatialement. Pour cela, allez dans les `Propriétés` de la couche COMMUNE (avec la jointure), onglet `Symbologie`. Nous souhaitons réaliser une symbologie qui varie selon les différentes valeurs de PRA. Le symbole est donc `Catégorisé` en fonction d'une `valeur` correspondant au champ `PRA_Lib` (libellé). Demandez de `Classer` (bouton en bas à gauche) pour affecter une couleur à chaque modalité. Adaptez si besoin les couleurs et appliquez. 
+Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter spatialement. Pour cela, allez dans les `Propriétés` de la couche COMMUNE (avec la jointure), onglet `Symbologie`. Nous souhaitons réaliser une symbologie qui varie selon les différentes valeurs de PRA. Le symbole est donc `Catégorisé` en fonction d'une `valeur` correspondant au champ `PRA_Lib` (libellé). Demandez de `Classer` (bouton en bas à gauche) pour affecter une couleur à chaque modalité. Adaptez si besoin les couleurs et appliquez.
 
 
 ![Opération de jointure attributaire](figures/carto_PRA.png)
@@ -218,9 +220,9 @@ Plusieurs communes appartiennent à la même PRA et nous pouvons le représenter
 
 Une typologie des climats de France métropolitaine a été proposée par [Joly et al. (2010)](https://journals.openedition.org/cybergeo/23155). Elle est basée sur un jeu de 14 variables climatiques relatives aux précipitations et aux températures intégrant une série temporelle de 30 ans (1971-2000). Les données, ainsi que la carte finale, sont disponibles [en ligne](https://journals.openedition.org/cybergeo/23155) (voir annexes de la publication).
 
-Téléchargez la typologie des climats français au format `.asc` (format de texte ASCII). Importez le fichier sous QGIS via le panneau `Explorateur > raster`. Que constatez-vous ? Où se situe votre couche (image) importée ? Quel est son SRC ? 
+Téléchargez la typologie des climats français au format `.asc` (format de texte ASCII). Importez le fichier sous QGIS via le panneau `Explorateur > raster`. Que constatez-vous ? Où se situe votre couche (image) importée ? Quel est son SRC ?
 
-Sous QGIS, le SRC de cette couche est inconnu. Il faut donc revenir à la source (annexes de la publication) pour connaître le système de projection et le déclarer. Après examen, il s'agit de la projection Lambert II étendu. 
+Sous QGIS, le SRC de cette couche est inconnu. Il faut donc revenir à la source (annexes de la publication) pour connaître le système de projection et le déclarer. Après examen, il s'agit de la projection Lambert II étendu.
 
 Recherchez le code EPSG de cette projection (NTF (Paris) / Lambert zone II) sur le site [https://epsg.org/](https://epsg.org/). Une fois trouvé, déclarez sous QGIS le SRC de la couche (clic bouton droit `Définir le SRC > Définir le SRC de la couche`). Rentrez le code EPSG et validez. A présent, il faut reprojeter cette couche des zones climatiques puisqu'elle est dans un système différent de celui du projet. Pour cela, menu `Raster > Projections` `> Projection (warp)` (NB : ce n'est pas le même outil que précédemment car ici, il s'agit d'un raster et non d'un vecteur). Votre SRC cible est le Lambert-93 (EPSG:2154). La méthode de ré-échantillonnage est le plus proche voisin. une fois que tout est bien paramétré, vous pouvez exécuter.
 
@@ -232,7 +234,7 @@ Alors ? En cas de souci (bienvenue dans le monde de la géomatique...;-)), vous 
 
 Les recensements agricoles (agreste) fournissent de nombreuses informations sur l'agriculture à l'échelon communal. Vous avez déjà suivi un TD consacré à l'extraction de ces données précédemment. Vous trouverez un fichier .xls dans le dossier "data" du TD informant sur les cultures par commune (RA 2010 pour la Haute-Garonne). Ouvrez ce fichier et prenez connaissance du contenu. Il est possible d'envisager une jointure attributaire comme précédemment pour représenter une variable d'intérêt (ex. superficie cultivée en céréales). Néanmoins, un nettoyage des premières lignes est nécessaire pour un import en .csv facile sous QGIS. Par ailleurs, il faudrait isoler le code communal INSEE (ou le nom de la commune) dans une nouvelle colonne afin de pouvoir réaliser la jointure par la suite.
 
-Supprimez d'abord les premières lignes du fichier .xls afin de ne garder que les en-têtes des colonnes. Ensuite, ajoutez une nouvelle colonne à droite de /Commune dans laquelle le code INSEE sera inséré par extraction d'une chaîne de caractère. Nommez cette colonne INSEE. Utilisez alors la fonction `STXT(texte; début; nombre)` du tableur qui renvoie une chaîne de caractères partielle du *texte* en entrée. Le *texte* représente la référence à la cellule contenant le texte à extraire. Le *début* correspond à la position du premier caractère à extraire dans le *texte*. Le *nombre* précise le nombre de caractères à extraire. Ainsi, l'extraction du code INSEE de la colonne /Commune pour la onzième ligne pourrait prendre la forme `=STXT(C11;1;5)`. Une fois la fonction appliquée pour toutes les communes, exportez le fichier en .csv pour un import sous QGIS. Puis, tentez de réaliser une jointure attributaire et de cartographier la surface cultivée en céréales par commune. 
+Supprimez d'abord les premières lignes du fichier .xls afin de ne garder que les en-têtes des colonnes. Ensuite, ajoutez une nouvelle colonne à droite de /Commune dans laquelle le code INSEE sera inséré par extraction d'une chaîne de caractère. Nommez cette colonne INSEE. Utilisez alors la fonction `STXT(texte; début; nombre)` du tableur qui renvoie une chaîne de caractères partielle du *texte* en entrée. Le *texte* représente la référence à la cellule contenant le texte à extraire. Le *début* correspond à la position du premier caractère à extraire dans le *texte*. Le *nombre* précise le nombre de caractères à extraire. Ainsi, l'extraction du code INSEE de la colonne /Commune pour la onzième ligne pourrait prendre la forme `=STXT(C11;1;5)`. Une fois la fonction appliquée pour toutes les communes, exportez le fichier en .csv pour un import sous QGIS. Puis, tentez de réaliser une jointure attributaire et de cartographier la surface cultivée en céréales par commune.
 
 ![Opération de jointure attributaire](figures/RA_2010_cultures.png)
 
@@ -242,14 +244,14 @@ Supprimez d'abord les premières lignes du fichier .xls afin de ne garder que le
 
 Rendez-vous sur le site [http://infoterre.brgm.fr/](http://infoterre.brgm.fr/). Nous allons rechercher l'adresse du service Web permettant d'afficher les données géologiques sous forme de flux. Allez dans le menu `Données et Services > Geoservices OGC`. Repérez l'URL du service WMS et WFS 'Geologie'. Notez que d'autres services sont disponibles, sur les risques naturels et industriels notamment.
 
-Sous QGIS, sélectionnez `WFS` dans le panneau `Explorateur`. Créez une nouvelle connexion ayant pour nom 'Geologie' avec l'URL [http://geoservices.brgm.fr/geologie](http://geoservices.brgm.fr/geologie). Connectez-vous ensuite au flux pour voir apparaître les différents jeux de données disponibles. Vous pouvez afficher la carte lithologique simplifiée au 1/1 000 000. Quel est le mode de représentation des données ? raster ou vecteur ? 
+Sous QGIS, sélectionnez `WFS` dans le panneau `Explorateur`. Créez une nouvelle connexion ayant pour nom 'Geologie' avec l'URL [http://geoservices.brgm.fr/geologie](http://geoservices.brgm.fr/geologie). Connectez-vous ensuite au flux pour voir apparaître les différents jeux de données disponibles. Vous pouvez afficher la carte lithologique simplifiée au 1/1 000 000. Quel est le mode de représentation des données ? raster ou vecteur ?
 
-Vous pouvez utiliser l'outil d'identification (icône du curseur qui pointe sur un petit _i_) pour connaître la nature de l'unité géologique en cliquant sur les objets. Toutefois, la description est très simplifiée. Une version plus complète est disponible avec le flux WFS spécifiquement dédié à la carte géologique : [http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&](http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&). :warning: Pensez également à prendre connaissance des **notices** associées à ces cartes. 
+Vous pouvez utiliser l'outil d'identification (icône du curseur qui pointe sur un petit _i_) pour connaître la nature de l'unité géologique en cliquant sur les objets. Toutefois, la description est très simplifiée. Une version plus complète est disponible avec le flux WFS spécifiquement dédié à la carte géologique : [http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&](http://mapsref.brgm.fr/wxs/1GG/BRGM_1M_INSPIRE_geolUnits_geolFaults?language=eng&). :warning: Pensez également à prendre connaissance des **notices** associées à ces cartes.
 
-Pour une représentation plus détaillée de la géologie, c'est plutôt la version au 1/50 000 qu'il faut consulter. Depuis quelques temps, le BRGM rend possible le téléchargement des cartes géologiques départementales vectorisées et harmonisées au 1/50 000 (BD Charm-50) sur [son site](https://infoterre.brgm.fr/page/telechargement-cartes-geologiques) au format `shp`. 
+Pour une représentation plus détaillée de la géologie, c'est plutôt la version au 1/50 000 qu'il faut consulter. Depuis quelques temps, le BRGM rend possible le téléchargement des cartes géologiques départementales vectorisées et harmonisées au 1/50 000 (BD Charm-50) sur [son site](https://infoterre.brgm.fr/page/telechargement-cartes-geologiques) au format `shp`.
 
 Pour une visualisation fluide des différentes échelles, vous pouvez aussi utiliser depuis votre navigateur, la version WMS-C qui intègre des tuiles d’images pré-construites afin d’accélérer leur affichage : [http://geoservices.brgm.fr/wms-c.html](http://geoservices.brgm.fr/wms-c.html).
- 
+
 
 ![Visualisation des cartes géologiques avec la version WMS-C](figures/geol.png)
 
@@ -264,7 +266,7 @@ C'est le [Sandre](http://www.sandre.eaufrance.fr/) (Service d'administration nat
 
 # Dessiner un parcellaire agricole (digitalisation)
 
-Si vous souhaitez représenter le parcellaire de votre exploitation, vous pouvez le *digitaliser* en utilisant les outils dédiés. 
+Si vous souhaitez représenter le parcellaire de votre exploitation, vous pouvez le *digitaliser* en utilisant les outils dédiés.
 
 ## Créer une nouvelle couche
 
@@ -287,7 +289,7 @@ Vérifiez dans le menu `Vue > Barre d'outils` que les `Barre d'outils de numéri
 
 - Il suffira ensuite de sélectionner l'outil `Ajouter une entité polygonale` et de dessiner le parcellaire
 
-![Créer une entité polygonale](figures/parcellaire.png)	
+![Créer une entité polygonale](figures/parcellaire.png)
 
 À chaque clic gauche, un nouveau point de votre polygone est ajouté. Pour terminer votre polygone, il suffit de faire un clic droit.
 
@@ -296,44 +298,12 @@ Pour se déplacer pendant la vectorisation, vous pouvez soit dézoomer (avec la 
 
 ## S'accrocher aux polygones déjà créés
 
-L'outil accrochage est indispensable quand on fait de la digitalisation. Si vous ne l'avez pas activé, il va vous manquer car cet outil permet de s'appuyer sur les polygones déjà créés et agit comme un aimant. Si le nouveau point que vous voulez créer est très proche d'un point d'une parcelle existante, alors l'outil accrochage va comprendre qu'il ne faut pas le dupliquer mais l'utiliser. Quel est l'intérêt ? Cela réduit les erreurs. Avec le format GeoPackage, la structure de donnée est *non topologique* (i.e. *spaghetti*). Cette structure ne vous empêche pas de créer des polygones qui se superposent ou qui ne partagent pas le même segment en cas d'adjacence. A première vue, ça peut paraître sans importance mais cela engendre de nombreuses erreurs de calcul par la suite à cause de géométries biaisées (en plus de données redondantes). Il faut donc s'en prémunir au moment de la saisie. 
+L'outil accrochage est indispensable quand on fait de la digitalisation. Si vous ne l'avez pas activé, il va vous manquer car cet outil permet de s'appuyer sur les polygones déjà créés et agit comme un aimant. Si le nouveau point que vous voulez créer est très proche d'un point d'une parcelle existante, alors l'outil accrochage va comprendre qu'il ne faut pas le dupliquer mais l'utiliser. Quel est l'intérêt ? Cela réduit les erreurs. Avec le format GeoPackage, la structure de donnée est *non topologique* (i.e. *spaghetti*). Cette structure ne vous empêche pas de créer des polygones qui se superposent ou qui ne partagent pas le même segment en cas d'adjacence. A première vue, ça peut paraître sans importance mais cela engendre de nombreuses erreurs de calcul par la suite à cause de géométries biaisées (en plus de données redondantes). Il faut donc s'en prémunir au moment de la saisie.
 
 Afin d'activer la barre d'outils et voir l'icône *aimant* dans votre fenêtre QGIS, cochez :
 
-`Vue > Barre d'outils > Accrochage`. 
+`Vue > Barre d'outils > Accrochage`.
 
 Activer l'`édition topologique` et `l'accrochage aux intersections`.
 
 ![Outil d'accrochage de QGIS](figures/accrochage.png)
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
