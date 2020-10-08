@@ -3,7 +3,7 @@
 Dans ce TD, vous allez apprendre à représenter des données spatiales et réaliser des cartes thématiques en respectant les règles de sémiologie graphique. Ce TD fait suite au TD relatif à la collecte de données dont le contenu se trouve à l'adresse suivante : [https://github.com/dsheeren/1A_DATA-CEVI/tree/master/TD_1A_DATA-COLLECT](https://github.com/dsheeren/1A_DATA-CEVI/tree/master/TD_1A_DATA-COLLECT). Ces séances devraient vous aider à recueillir des données sur votre exploitation agricole (EA) et à les cartographier, pour enrichir le rapport de stage demandé dans l'UE "Analyse et Diagnostic d'un agroécosystème" (DA). 
 
 
-# Adapter la représentation au message cartographique à faire passer 
+# Adapter la représentation au message cartographique
 
 Une carte thématique permet de communiquer un message à l'aide d'un langage graphique. Le principe est de s'appuyer sur des signes graphiques (point, ligne, surface) que l'on fait varier de façon *proportionnelle*, *ordonnée* ou *différentielle* à l'aide de variables visuelles appropriées, afin de rendre perceptible le message. Les **règles de sémiologie graphique** garantissent la bonne adéquation entre la perception visuelle et le message souhaité. 
 
@@ -46,25 +46,22 @@ En plus du parcellaire agricole, 2 fichiers de type `.csv` sont fournis. Ils con
  - `assolement_2018.csv` : il précise les cultures réalisées sur chacune des parcelles pour une saison culturale de 2018
  - `rendement.csv` : il informe sur le rendement moyen de chacune des cultures (en qt/ha)
 
-Chargez la couche `parcelles_borret.gpkg` dans votre projet. Prenez connaissance du contenu de sa table attributaire (`clic droit sur la couche > ouvrir la table d'attributs`). Deux champs dans cette table sont présents : `fid` et `id_parcelle`.
+Chargez la couche `parcelles_borret.gpkg` dans votre projet. Prenez connaissance du contenu de sa table attributaire (`clic droit sur la couche >` `ouvrir la table d'attributs`). Deux champs dans cette table sont présents : `fid` et `id_parcelle`.
 
 
 ## Afficher une étiquette
 
-Affichez dans un premier temps l'identifiant de chaque parcelle sous la forme d'étiquette : `clic droit > Propriétés > Etiquettes`
-
-![Étiquetter les parcelles](figures/etiquette_parcelle.png)
-
-N'hésitez pas à changer la police de l'étiquette ou d'autres propriétés, pour mieux faire ressortir l'identifiant. 
+Affichez dans un premier temps l'identifiant de chaque parcelle sous la forme d'étiquette : `clic droit > Propriétés > Etiquettes`. N'hésitez pas à changer la police de l'étiquette ou d'autres propriétés, pour mieux faire ressortir l'identifiant. 
 
 Si vous souhaitez afficher un texte en plus de la valeur d'un champ, vous pouvez le faire à travers une **concaténation** de deux chaînes de caractères. Pour cela, calculez une nouvelle expression avec l'outil correspondant (bouton à droite de la valeur de l'étiquette). Insérez l'expression suivante :
 
 ```
 concat('Parcelle n',"id_parcelle")
-
 ```
 
 :warning: Remarquez la syntaxe différente selon qu'il s'agit d'un texte libre (guillemets *simples*) ou d'un texte correspondant à la valeur d'un champ (guillemets *double*) correspondant ici à `id_parcelle`.
+
+![Étiquetter les parcelles](figures/etiquette_parcelle.png)
 
 
 ![Résultat de l'étiquettage](figures/parcelle_num.png){height=150px}
@@ -81,7 +78,7 @@ Demandez ensuite au logiciel de `Classer` les valeurs du champ (i.e. récupérer
 
 Le rendu peut prendre la forme suivante :
 
-![Liste des symbologies](figures/parcelles_couleur.png)
+![Exemple de représentation du parcellaire](figures/parcelles_couleur.png){height=210px}
 
 
 ## Améliorer le rendu
@@ -91,7 +88,7 @@ Pour améliorer la beauté de votre carte ;-), vous pouvez par exemple :
 - ajouter de la transparence à la couleur de chaque parcelle,
 - changer le ligne de contour du polygone,
 - changer de police.
-- choisir l'endroit où sera placé votre texte (`étiquette > position > forcer le point dans le polygone` par exemple)
+- choisir l'endroit où sera placé votre texte (`étiquette > position >` `forcer le point dans le polygone` par exemple)
 
 
 # Habiller et exporter la carte du parcellaire agricole
@@ -108,19 +105,22 @@ Une fois votre symbologie fixée, vous pouvez créer une mise en page spécifiqu
 
 Allez dans le menu `Projet > Nouvelle mise en page`. Pour ajouter vos données, cliquez sur l'icône `Ajouter une carte` dans le menu à gauche et cliquez ensuite sur la page.
 
+
 ![Ajouter une carte](figures/composer_addMap.png)
+
 
 Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à la page. Pour déplacer les éléments au sein du bloc de carte, utilisez le bouton `Déplacer le contenu de l'objet` (flèche dans les 4 directions). 
 
-Si le niveau de Zoom n'est pas satisfaisant, le plus simple est de retourner dans la fenêtre principale de QGIS et d'appliquer (bouton droit) un `Zoom sur la couche` avant d'ajouter la carte au composeur de mise en page. Autre solution : modifier l'échelle depuis le composeur dans l'onglet `Propriétés de l'objet`. Si vous souhaitez que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS, restez dans l'onglet `Propriétés de l'objet` et appliquez l'option `Set Map Extent to Match Main Canvas Extent`.
+Si le niveau de Zoom n'est pas satisfaisant, le plus simple est de retourner dans la fenêtre principale de QGIS et d'appliquer (bouton droit) un `Zoom sur la couche` avant d'ajouter la carte au composeur de mise en page. Autre solution : modifier l'échelle depuis le composeur dans l'onglet `Propriétés de l'objet`. Si vous souhaitez que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS, restez dans l'onglet `Propriétés de l'objet` et appliquez l'option `Set Map Extent to Match` `Main Canvas Extent`.
 
-![Étendue de la carte QGIS](figures/composer_mapExtent.png).
+
+![Étendue de la carte QGIS](figures/composer_mapExtent.png)
 
 
 A présent, vous pouvez ajouter les différents éléments d'habillage que vous trouverez dans la barre d'outils `Boîte à outils`. Vous trouverez une illustration ci-dessous (même si la carte en elle-même présente peu d'intérêt ici) :
 
 
-![Exemple de mise en page](figures/miseEnPage_carte.png).
+![Exemple de mise en page cartographique](figures/miseEnPage_carte.png){height=330px}
 
 
 Quand la carte vous convient, allez dans `Mise en page > Exporter au format PDF`, `image` ou `SVG` selon l'utilisation voulue.
@@ -135,7 +135,7 @@ Grâce au fichier `rendement.csv`, nous connaissons la rendement en quintaux/ha 
 
 Il faut donc désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main ! 
 
-Importez vos fichiers `.csv` directement dans QGIS (`Couche > Ajouter une couche > Ajouter une couche de texte délimité`). Sélectionnez votre fichier et cochez la case `Détecter les types de champs` pour que QGIS traite bien les nombres comme une colonne de type numérique et non de type texte. Ces fichiers `.csv` n'ont pas de géométrie (pas de coordonnées X et Y pour en générer). Il faudra donc aussi cocher l'option `Pas de géométrie` dans la partie `Définition de la géométrie`.
+Importez vos fichiers `.csv` directement dans QGIS (`Couche > Ajouter une couche >` `Ajouter une couche de texte délimité`). Sélectionnez votre fichier et cochez la case `Détecter les types de champs` pour que QGIS traite bien les nombres comme une colonne de type numérique et non de type texte. Ces fichiers `.csv` n'ont pas de géométrie (pas de coordonnées X et Y pour en générer). Il faudra donc aussi cocher l'option `Pas de géométrie` dans la partie `Définition de la géométrie`.
 
 Prenez connaissance du contenu de la table attributaire comme pour toutes les couches importées sous QGIS (c'est un automatisme à acquérir).
 
@@ -211,15 +211,15 @@ Cette étape permet de déterminer la taille d'un symbole en fonction de la vale
 
 Ouvrez la fenêtre `Symbologie` de la couche des centroïdes. Depuis le bouton à droite de la propriété `Taille`, utilisez l'`Assistant`.
 
-![Faire varier en taille en fonction d'une expression](figures/taille_fonction_champ.png)
+![Symbologie du symbole ponctuel](figures/taille_fonction_champ.png)
 
 Dans cette fenêtre, vous pouvez paramétrer la taille du symbole de façon proportionnelle à la valeur d'un champ. Dans notre cas, le champ `Source` à préciser est la production totale. Recalculer les valeurs min/max de ce champ à l'aide du bouton situé à droite. Arrondissez ensuite ces valeurs comme précisé dans l'illustration. A chacune de ces valeurs de production correspondent une taille pour le symbole de `Sortie` (avec méthode de calcul = surface). Les valeurs intermédiaires sont estimées par interpolation. 
 
 ![Paramétrage de la taille des cercles proportionnels](figures/param_cercles.png)
 
-A présent, il faut générer la légende des cercles proportionnels. Pour cela, toujours dans la partie `Symbologie`, en bas à gauche, cliquez sur `Avancé > Légende définie par la taille des symboles`. Pour légender les symboles proportionnels, on utilise ce qu'on appelle une légende repliée. 
+A présent, il faut générer la légende des cercles proportionnels. Pour cela, toujours dans la partie `Symbologie`, en bas à gauche, cliquez sur `Avancé > Légende définie par la` `taille des symboles`. Pour légender les symboles proportionnels, on utilise ce qu'on appelle une légende repliée. 
 
-![Définissez votre légende proportionnelle](figures/legend_propor.png)
+![Légende des cercles proportionnels](figures/legend_propor.png)
 
 
 Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous).
@@ -233,16 +233,16 @@ Vous pouvez à nouveau faire une carte en combinant à la fois l'information pon
 
 Dans la fenêtre générale de QGIS (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
 
-Pour ajouter une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale, il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la mise en page`, comme pour votre première carte (dans le composeur de mise en page).
+Pour ajouter une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale, il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page).
 
-Sélectionnez cette nouvelle carte puis, dans `Propriétés de l'objet`, allez dans la partie `Aperçu` et ajoutez comme cadre votre première carte (celle contenant vos parcelles).
+Sélectionnez cette nouvelle carte puis, dans `Propriétés de` `l'objet`, allez dans la partie `Aperçu` et ajoutez comme cadre votre première carte (celle contenant vos parcelles).
 
 Pour avoir un style différent de votre carte principale (celle des parcelles) il faudra faire des allers-retours entre le composeur de mise en page et QGIS. Par exemple, dans la fenêtre principale de QGIS, mettez juste le fond OSM et désactivez les couches que vous ne voulez pas voir (comme vos parcelles) puis, retournez dans le composeur pour `Verrouiller les couches` de votre carte de localisation (dans l'onglet `Propriétés de l'objet`). Ainsi, quand vous remettrez dans le canevas principal de QGIS votre carte des parcelles, l'aperçu de votre petite carte ne se mettra pas à jour à gardera uniquement l'ancienne configuration.
 
 ![Carte avec localisation de la zone d'étude en utilisant des couches différentes](figures/map_withloc.png)
 
 
-# Génération d'un atlas
+# Générer un atlas
 
 Un atlas permet de générer des cartes détaillées en utilisant un modèle identique. C'est par exemple utilisé pour préparer un document pour un relevé sur le terrain en montrant précisément chaque parcelle qui sera étudiée *in situ*.
 
@@ -261,7 +261,9 @@ Pour ajouter des valeurs (textuelles ou numériques) en fonction de votre parcel
 Ainsi, il ne sera plus obligatoire d'utiliser la fonction `concat` car chaque variable sera mise entre crochets et entre %, comme par exemple :
 
 ```
-En 2018, la parcelle n [% "id_parcelle" %] a produit  [% "prod_totale" %] qt de [% "assolement_2018_type" %]
+En 2018, la parcelle n [% "id_parcelle" %] a produit
+
+[% "prod_totale" %] qt de [% "assolement_2018_type" %]
 
 ```
 
