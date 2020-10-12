@@ -120,7 +120,7 @@ Si le niveau de Zoom n'est pas satisfaisant, le plus simple est de retourner dan
 A présent, vous pouvez ajouter les différents éléments d'habillage que vous trouverez dans la barre d'outils `Boîte à outils`. Vous trouverez une illustration ci-dessous (même si la carte en elle-même présente peu d'intérêt ici) :
 
 
-![Exemple de mise en page cartographique](figures/miseEnPage_carte.png){height=330px}
+![Exemple de mise en page cartographique](figures/miseEnPage_carteV2.png){height=330px}
 
 
 Quand la carte vous convient, allez dans `Mise en page > Exporter au format PDF`, `image` ou `SVG` selon l'utilisation voulue.
