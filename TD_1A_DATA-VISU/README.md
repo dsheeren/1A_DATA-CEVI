@@ -233,13 +233,17 @@ Vous pouvez à nouveau faire une carte en combinant à la fois l'information pon
 
 ## Ajouter une carte de localisation de la zone d'étude
 
-Dans la fenêtre générale de QGIS (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
+Pour avoir un style différent de votre carte principale (celle des parcelles) il faudra faire des allers-retours entre le **composeur de mise en page** et la **fenêtre générale de QGIS**.
 
-Pour ajouter une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale, il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page).
+Dans **le composeur**, commencez par `Verrouiller les couches` de votre carte de principale (dans l'onglet `Propriétés de l'objet`). Ainsi, quand vous allez rajouter un fond de carte dans **le canevas principal de QGIS** , votre carte principale ne se mettra pas à jour et gardera uniquement l'ancienne configuration.
 
-Sélectionnez cette nouvelle carte puis, dans `Propriétés de` `l'objet`, allez dans la partie `Aperçu` et ajoutez comme cadre votre première carte (celle contenant vos parcelles).
+Maintenant que vous avez vérouillé votre carte principale, dans la **fenêtre générale de QGIS** (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
 
-Pour avoir un style différent de votre carte principale (celle des parcelles) il faudra faire des allers-retours entre le composeur de mise en page et QGIS. Par exemple, dans la fenêtre principale de QGIS, mettez juste le fond OSM et désactivez les couches que vous ne voulez pas voir (comme vos parcelles) puis, retournez dans le composeur pour `Verrouiller les couches` de votre carte de localisation (dans l'onglet `Propriétés de l'objet`). Ainsi, quand vous remettrez dans le canevas principal de QGIS votre carte des parcelles, l'aperçu de votre petite carte ne se mettra pas à jour à gardera uniquement l'ancienne configuration.
+Dans le **composeur de mise en page**, ajoutez une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale. Il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page).
+
+Sélectionnez ensuite cette nouvelle carte puis, dans `Propriétés de` `l'objet`, allez dans la partie `Aperçu` et ajoutez comme cadre votre première carte (celle contenant vos parcelles).
+
+Une fois paramétrées l'échelle et l'emprise de votre deuxième carte (celle de localisation), cochez l'option `Vérouiller les couches`.
 
 ![Carte avec localisation de la zone d'étude en utilisant des couches différentes](figures/map_withloc.png)
 
