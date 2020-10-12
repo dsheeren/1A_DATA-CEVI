@@ -1,11 +1,11 @@
 # Objectif
 
-Dans ce TD, vous allez apprendre à représenter des données spatiales et réaliser des cartes thématiques en respectant les règles de sémiologie graphique. Ce TD fait suite au TD relatif à la collecte de données dont le contenu se trouve à l'adresse suivante : [https://github.com/dsheeren/1A_DATA-CEVI/tree/master/TD_1A_DATA-COLLECT](https://github.com/dsheeren/1A_DATA-CEVI/tree/master/TD_1A_DATA-COLLECT). Ces séances devraient vous aider à recueillir des données sur votre exploitation agricole (EA) et à les cartographier, pour enrichir le rapport de stage demandé dans l'UE "Analyse et Diagnostic d'un agroécosystème" (DA). 
+Dans ce TD, vous allez apprendre à représenter des données spatiales et réaliser des cartes thématiques en respectant les règles de sémiologie graphique. Ce TD fait suite au TD relatif à la collecte de données dont le contenu se trouve à l'adresse suivante : [https://github.com/dsheeren/1A_DATA-CEVI/tree/master/TD_1A_DATA-COLLECT](https://github.com/dsheeren/1A_DATA-CEVI/tree/master/TD_1A_DATA-COLLECT). Ces séances devraient vous aider à recueillir des données sur votre exploitation agricole (EA) et à les cartographier, pour enrichir le rapport de stage demandé dans l'UE "Analyse et Diagnostic d'un agroécosystème" (DA).
 
 
 # Adapter la représentation au message cartographique
 
-Une carte thématique permet de communiquer un message à l'aide d'un langage graphique. Le principe est de s'appuyer sur des signes graphiques (point, ligne, surface) que l'on fait varier de façon *proportionnelle*, *ordonnée* ou *différentielle* à l'aide de variables visuelles appropriées, afin de rendre perceptible le message. Les **règles de sémiologie graphique** garantissent la bonne adéquation entre la perception visuelle et le message souhaité. 
+Une carte thématique permet de communiquer un message à l'aide d'un langage graphique. Le principe est de s'appuyer sur des signes graphiques (point, ligne, surface) que l'on fait varier de façon *proportionnelle*, *ordonnée* ou *différentielle* à l'aide de variables visuelles appropriées, afin de rendre perceptible le message. Les **règles de sémiologie graphique** garantissent la bonne adéquation entre la perception visuelle et le message souhaité.
 
 On distingue 6 variables visuelles : la *forme*, la *taille*, la *valeur*, le *grain*, l'*orientation* et la *couleur*. Selon les auteurs, la texture-structure peut également être rajoutée. Chacune de ces variables a une ou plusieurs propriétés :
 
@@ -13,7 +13,7 @@ On distingue 6 variables visuelles : la *forme*, la *taille*, la *valeur*, le *g
 ![Propriétés principales et secondaires des variables visuelles](figures/semio_synthese.png)
 
 
-Avant de choisir une symbologie pour représenter la variable thématique d'intérêt, il faut donc s'interroger sur sa nature. S'agit-il d'une variable quantitative absolue ? quantitative relative ? qualitative nominale ? ordinale ? Pour davantage de détails sur ces aspects, reportez-vous au cours d'introduction à la collecte des données et à la cartographie thématique. 
+Avant de choisir une symbologie pour représenter la variable thématique d'intérêt, il faut donc s'interroger sur sa nature. S'agit-il d'une variable quantitative absolue ? quantitative relative ? qualitative nominale ? ordinale ? Pour davantage de détails sur ces aspects, reportez-vous au cours d'introduction à la collecte des données et à la cartographie thématique.
 
 
 # Créer un nouveau projet QGIS
@@ -51,7 +51,7 @@ Chargez la couche `parcelles_borret.gpkg` dans votre projet. Prenez connaissance
 
 ## Afficher une étiquette
 
-Affichez dans un premier temps l'identifiant de chaque parcelle sous la forme d'étiquette : `clic droit > Propriétés > Etiquettes`. N'hésitez pas à changer la police de l'étiquette ou d'autres propriétés, pour mieux faire ressortir l'identifiant. 
+Affichez dans un premier temps l'identifiant de chaque parcelle sous la forme d'étiquette : `clic droit > Propriétés > Etiquettes`. N'hésitez pas à changer la police de l'étiquette ou d'autres propriétés, pour mieux faire ressortir l'identifiant.
 
 Si vous souhaitez afficher un texte en plus de la valeur d'un champ, vous pouvez le faire à travers une **concaténation** de deux chaînes de caractères. Pour cela, calculez une nouvelle expression avec l'outil correspondant (bouton à droite de la valeur de l'étiquette). Insérez l'expression suivante :
 
@@ -70,11 +70,11 @@ concat('Parcelle n',"id_parcelle")
 ## Associer une couleur unique par parcelle
 
 
-En vous aidant de l'identifiant unique de chaque parcelle (variable qualitative nominale), définissez depuis les `Propriétés` de la couche, onglet `Symbologie`, une palette de couleur afin que chaque parcelle soit représentée avec sa propre couleur. Quel type de symbologie faut-il appliquer ? Ici, le mode `Catégorisé` est le plus adapté en choissant le champ `id_parcelle` comme champ de Valeur. 
+En vous aidant de l'identifiant unique de chaque parcelle (variable qualitative nominale), définissez depuis les `Propriétés` de la couche, onglet `Symbologie`, une palette de couleur afin que chaque parcelle soit représentée avec sa propre couleur. Quel type de symbologie faut-il appliquer ? Ici, le mode `Catégorisé` est le plus adapté en choissant le champ `id_parcelle` comme champ de Valeur.
 
 ![Liste des symbologies](figures/symbologie.png){height=100px}
 
-Demandez ensuite au logiciel de `Classer` les valeurs du champ (i.e. récupérer les différentes modalités du champ). Vous pouvez alors modifier la façon dont les parcelles seront représentées (clic double sur les carrés de la colonne `symbole`). Notez que pour les couleurs, il existe des palettes prédéfinies. Dans notre cas, c'est la teinte qu'il convient de modifier étant donner que nous cherchons à exprimer une différence (associativité, sélectivité). La palette de couleurs aléatoires est donc appropriée. 
+Demandez ensuite au logiciel de `Classer` les valeurs du champ (i.e. récupérer les différentes modalités du champ). Vous pouvez alors modifier la façon dont les parcelles seront représentées (clic double sur les carrés de la colonne `symbole`). Notez que pour les couleurs, il existe des palettes prédéfinies. Dans notre cas, c'est la teinte qu'il convient de modifier étant donner que nous cherchons à exprimer une différence (associativité, sélectivité). La palette de couleurs aléatoires est donc appropriée.
 
 Le rendu peut prendre la forme suivante :
 
@@ -109,7 +109,7 @@ Allez dans le menu `Projet > Nouvelle mise en page`. Pour ajouter vos données, 
 ![Ajouter une carte](figures/composer_addMap.png)
 
 
-Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à la page. Pour déplacer les éléments au sein du bloc de carte, utilisez le bouton `Déplacer le contenu de l'objet` (flèche dans les 4 directions). 
+Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à la page. Pour déplacer les éléments au sein du bloc de carte, utilisez le bouton `Déplacer le contenu de l'objet` (flèche dans les 4 directions).
 
 Si le niveau de Zoom n'est pas satisfaisant, le plus simple est de retourner dans la fenêtre principale de QGIS et d'appliquer (bouton droit) un `Zoom sur la couche` avant d'ajouter la carte au composeur de mise en page. Autre solution : modifier l'échelle depuis le composeur dans l'onglet `Propriétés de l'objet`. Si vous souhaitez que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS, restez dans l'onglet `Propriétés de l'objet` et appliquez l'option `Set Map Extent to Match` `Main Canvas Extent`.
 
@@ -133,7 +133,7 @@ N'oubliez pas de sauvegarder votre projet qui contiendra désormais votre premi�
 
 Grâce au fichier `rendement.csv`, nous connaissons la rendement en quintaux/ha pour chaque type de culture.
 
-Il faut donc désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main ! 
+Il faut donc désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main !
 
 Importez vos fichiers `.csv` directement dans QGIS (`Couche > Ajouter une couche >` `Ajouter une couche de texte délimité`). Sélectionnez votre fichier et cochez la case `Détecter les types de champs` pour que QGIS traite bien les nombres comme une colonne de type numérique et non de type texte. Ces fichiers `.csv` n'ont pas de géométrie (pas de coordonnées X et Y pour en générer). Il faudra donc aussi cocher l'option `Pas de géométrie` dans la partie `Définition de la géométrie`.
 
@@ -146,6 +146,8 @@ Pour lier des données entre elles, il faut d'abord identifier un champs (colonn
 
 Une fois la colonne commune identifiée entre le fichier parcelle et le fichier `.csv`, appliquez la jointure. Ensuite, ouvrez la table attributaire du fichier `parcelles` et vérifiez qu'il contient bien une nouvelle colonne correctement remplie (l'assolement ou le rendement).
 
+**Astuce :** ici, l'ordre des jointures est importante. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez maintenant réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne rendement est maintenant présente dans la table attributaire de la couche `parcelles_borret`.
+
 
 ## Sauvegarder la jointure
 
@@ -154,14 +156,14 @@ Les jointures sont en fait un lien entre votre fichier vectoriel `.gpkg` et les 
 
 # Cartographier le rendement
 
-Réalisez une carte *choroplèthe* qui représente sous la forme d'un aplat de couleur le rendement (en qt/ha). Pour cela, choisissez une symbologie en mode `Gradué`. Les valeurs de rendement seront discrétisées en un certain nombre de classes (seuils naturels de Jenks) et la palette de couleur impliquera une variation de la *valeur* pour une teinte choisie (ex. du vert clair au vert foncé). De cette façon, on perçoit visuellement un ordre entre les parcelles du point de vue de leur rendement (sachant que cette différence est uniquement liée ici au type de culture). 
+Réalisez une carte *choroplèthe* qui représente sous la forme d'un aplat de couleur le rendement (en qt/ha). Pour cela, choisissez une symbologie en mode `Gradué`. Les valeurs de rendement seront discrétisées en un certain nombre de classes (seuils naturels de Jenks) et la palette de couleur impliquera une variation de la *valeur* pour une teinte choisie (ex. du vert clair au vert foncé). De cette façon, on perçoit visuellement un ordre entre les parcelles du point de vue de leur rendement (sachant que cette différence est uniquement liée ici au type de culture).
 
 
 # Cartographier la production totale par parcelle
 
 A présent, vous allez réaliser une nouvelle carte qui montre la production totale par parcelle. Connaissant le rendement de chaque culture, cette production totale peut être calculée en multipliant la valeur du rendement par la surface des parcelles.
 
-Pour réaliser cette carte correctement, une représentation par symbole proportionnel à la production (variable quantitative absolue) est la plus appropriée. C'est en effet une variation de quantité qu'il convient de faire apparaître ici en jouant sur la *taille* des symboles. Nous allons également passer en mode d'implantation ponctuelle pour rendre la représentation indépendante de la surface des polygones. 
+Pour réaliser cette carte correctement, une représentation par symbole proportionnel à la production (variable quantitative absolue) est la plus appropriée. C'est en effet une variation de quantité qu'il convient de faire apparaître ici en jouant sur la *taille* des symboles. Nous allons également passer en mode d'implantation ponctuelle pour rendre la représentation indépendante de la surface des polygones.
 
 
 ## Créer un champ et calculer la production totale
@@ -207,17 +209,17 @@ Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale 
 
 ## Générer les cercles proportionnels
 
-Cette étape permet de déterminer la taille d'un symbole en fonction de la valeur d'un champ. Dans notre cas, nous voulons faire varier la taille d'un cercle en fonction de la production totale de la parcelle. 
+Cette étape permet de déterminer la taille d'un symbole en fonction de la valeur d'un champ. Dans notre cas, nous voulons faire varier la taille d'un cercle en fonction de la production totale de la parcelle.
 
 Ouvrez la fenêtre `Symbologie` de la couche des centroïdes. Depuis le bouton à droite de la propriété `Taille`, utilisez l'`Assistant`.
 
 ![Symbologie du symbole ponctuel](figures/taille_fonction_champ.png)
 
-Dans cette fenêtre, vous pouvez paramétrer la taille du symbole de façon proportionnelle à la valeur d'un champ. Dans notre cas, le champ `Source` à préciser est la production totale. Recalculer les valeurs min/max de ce champ à l'aide du bouton situé à droite. Arrondissez ensuite ces valeurs comme précisé dans l'illustration. A chacune de ces valeurs de production correspondent une taille pour le symbole de `Sortie` (avec méthode de calcul = surface). Les valeurs intermédiaires sont estimées par interpolation. 
+Dans cette fenêtre, vous pouvez paramétrer la taille du symbole de façon proportionnelle à la valeur d'un champ. Dans notre cas, le champ `Source` à préciser est la production totale. Recalculer les valeurs min/max de ce champ à l'aide du bouton situé à droite. Arrondissez ensuite ces valeurs comme précisé dans l'illustration. A chacune de ces valeurs de production correspondent une taille pour le symbole de `Sortie` (avec méthode de calcul = surface). Les valeurs intermédiaires sont estimées par interpolation.
 
 ![Paramétrage de la taille des cercles proportionnels](figures/param_cercles.png)
 
-A présent, il faut générer la légende des cercles proportionnels. Pour cela, toujours dans la partie `Symbologie`, en bas à gauche, cliquez sur `Avancé > Légende définie par la` `taille des symboles`. Pour légender les symboles proportionnels, on utilise ce qu'on appelle une légende repliée. 
+A présent, il faut générer la légende des cercles proportionnels. Pour cela, toujours dans la partie `Symbologie`, en bas à gauche, cliquez sur `Avancé > Légende définie par la` `taille des symboles`. Pour légender les symboles proportionnels, on utilise ce qu'on appelle une légende repliée.
 
 ![Légende des cercles proportionnels](figures/legend_propor.png)
 
