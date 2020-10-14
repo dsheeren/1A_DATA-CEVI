@@ -146,7 +146,10 @@ Pour lier des données entre elles, il faut d'abord identifier un champs (colonn
 
 Une fois la colonne commune identifiée entre le fichier parcelle et le fichier `.csv`, appliquez la jointure. Ensuite, ouvrez la table attributaire du fichier `parcelles` et vérifiez qu'il contient bien une nouvelle colonne correctement remplie (l'assolement ou le rendement).
 
-**Astuce :** ici, l'ordre des jointures est importante. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez maintenant réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne rendement est maintenant présente dans la table attributaire de la couche `parcelles_borret`.
+**ASTUCE :** ici, l'ordre des jointures est importante. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez maintenant réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne rendement est maintenant présente dans la table attributaire de la couche `parcelles_borret`.
+
+
+![Schéma jointure](figures/schema_jointure.png)
 
 
 ## Sauvegarder la jointure
@@ -276,3 +279,5 @@ En 2018, la parcelle n [% "id_parcelle" %] a produit
 Votre atlas sera donc composé de 10 cartes, dont l'une sera du style :
 
 ![Exemple de l'atlas de la parcelle n3](figures/map_atlas.png)
+
+TODO : ajouter, enlever des élements de la légende
