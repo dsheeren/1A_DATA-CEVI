@@ -111,7 +111,12 @@ Allez dans le menu `Projet > Nouvelle mise en page`. Pour ajouter vos données, 
 
 Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à la page. Pour déplacer les éléments au sein du bloc de carte, utilisez le bouton `Déplacer le contenu de l'objet` (flèche dans les 4 directions).
 
-Si le niveau de Zoom n'est pas satisfaisant, le plus simple est de retourner dans la fenêtre principale de QGIS et d'appliquer (bouton droit) un `Zoom sur la couche` avant d'ajouter la carte au composeur de mise en page. Autre solution : modifier l'échelle depuis le composeur dans l'onglet `Propriétés de l'objet`. Si vous souhaitez que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS, restez dans l'onglet `Propriétés de l'objet` et appliquez l'option `Set Map Extent to Match` `Main Canvas Extent`.
+**Modifier l'échelle et l'emprise spatiale de votre carte**
+
+Si l'échelle ou l'emprise spatiale de votre carte n'est pas satifaisante (trop grande ou trop petite) vous pouvez les modifier de plusieurs manières :
+
+- soit **manuellement** en modifiant les paramètres `Échelle` (dans `Propriétés principales`) et `Emprise` ;
+- soit **automatiquement** en *copiant* l'emprise ou l'échelle du canevas principale à l'aide des boutons  `Régler l'emprise de la carte pour qu'elle corresponde à l'emprise du canevas principal` et `Régler l'emprise de la carte pour qu'elle corresponde à l'emprise du canevas principal` (voir figure ci-dessous). Vous pouvez ainsi régler facilement l'emprise et l'échelle souhaitée sur la fenêtre principale de QGIS et ensuite la *copier*.
 
 
 ![Étendue de la carte QGIS](figures/composer_mapExtent.png)
