@@ -255,6 +255,8 @@ Pour avoir un style différent de votre carte principale (celle des parcelles) i
 
 Dans **le composeur**, commencez par `Verrouiller les couches` de votre carte de principale (dans l'onglet `Propriétés de l'objet`). Ainsi, quand vous allez rajouter un fond de carte dans **le canevas principal de QGIS** , votre carte principale ne se mettra pas à jour et gardera uniquement l'ancienne configuration.
 
+![Vérouiller une couche](figures/verrouiller_couche.png)
+
 Maintenant que vous avez vérouillé votre carte principale, dans la **fenêtre générale de QGIS** (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
 
 Dans le **composeur de mise en page**, ajoutez une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale. Il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page).
