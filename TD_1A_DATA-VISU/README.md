@@ -229,8 +229,18 @@ A présent, il faut générer la légende des cercles proportionnels. Pour cela,
 
 Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous).
 
-
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
+
+
+**ASTUCE** : Vous pourrez remarquer que la légende affichée dans votre composeur s'actualise en fonction des couches que vous affichez dans la fenêtre principale de QGIS. Ce peut être un comportement souhaitable, mais également indésirable.
+
+Pour **supprimer un élément de la légende** vous pouvez :
+
+- simplement décocher cet élement dans la fenêtre principale de QGIS ;
+- Décocher la mis à jour automatique des `Élements de légende` dans les `propriétés de l'objet` (voir figure ci-dessous). Vous pourrez ensuite supprimer/ajouter des éléments de la légende.
+
+![Modification des élements de légende](figures/modification_legende.png)
+
 
 
 
