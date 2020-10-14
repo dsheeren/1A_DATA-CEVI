@@ -216,7 +216,7 @@ Cette étape permet de déterminer la taille d'un symbole en fonction de la vale
 
 Ouvrez la fenêtre `Symbologie` de la couche des centroïdes. Depuis le bouton à droite de la propriété `Taille`, utilisez l'`Assistant`.
 
-![Symbologie du symbole ponctuel](figures/taille_fonction_champ.png)
+![Symbologie du symbole ponctuel](figures/taille_fonction_champ_v2.png)
 
 Dans cette fenêtre, vous pouvez paramétrer la taille du symbole de façon proportionnelle à la valeur d'un champ. Dans notre cas, le champ `Source` à préciser est la production totale. Recalculer les valeurs min/max de ce champ à l'aide du bouton situé à droite. Arrondissez ensuite ces valeurs comme précisé dans l'illustration. A chacune de ces valeurs de production correspondent une taille pour le symbole de `Sortie` (avec méthode de calcul = surface). Les valeurs intermédiaires sont estimées par interpolation.
 
