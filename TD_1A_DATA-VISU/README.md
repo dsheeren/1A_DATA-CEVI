@@ -213,7 +213,7 @@ Dans l'étiquette, saisir l'expression suivante :
 concat("assolement_2018_type",'\n', "prod_totale",'qt')
 ```
 
-Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale par la production à l'ha (soit le rendement) et afficher une étiquette sous la forme : `Maïs : 89qt/ha`. Rappelez-vous de la différence entre les simples et les doubles guillemets...
+Si le nombre de décimales est trop important, vous pouvez rajouter la fonction `round` dans l'expression de l'étiquette qui arrondi un champ au nombre de décimales indiqué (dont la valeur peut être 0). Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale par la production à l'ha (soit le rendement) et afficher une étiquette sous la forme : `Maïs : 89qt/ha`. Rappelez-vous de la différence entre les simples et les doubles guillemets... D'autres options existent (voir [aide](https://docs.qgis.org/3.10/fr/docs/user_manual/style_library/label_settings.html)).
 
 
 
@@ -234,7 +234,7 @@ A présent, il faut générer la légende des cercles proportionnels. Pour cela,
 ![Légende des cercles proportionnels](figures/legend_propor.png)
 
 
-Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous).
+Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous). Ne vous étonnez pas si le rendu des cercles proportionnels dans la carte est peu satisfaisant. Il s'agit du [bug](https://github.com/qgis/QGIS/issues/36765) connu de la version 3.10.5 de QGIS...
 
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
 
