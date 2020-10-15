@@ -64,7 +64,7 @@ concat('Parcelle n',"id_parcelle")
 ![Étiquetter les parcelles](figures/etiquette_parcelle.png)
 
 
-![Résultat de l'étiquettage](figures/parcelle_num.png){height=150px}
+![Résultat de l'étiquettage](figures/parcelle_num.png){height=200px}
 
 
 ## Associer une couleur unique par parcelle
@@ -76,9 +76,10 @@ En vous aidant de l'identifiant unique de chaque parcelle (variable qualitative 
 
 Demandez ensuite au logiciel de `Classer` les valeurs du champ (i.e. récupérer les différentes modalités du champ). Vous pouvez alors modifier la façon dont les parcelles seront représentées (clic double sur les carrés de la colonne `symbole`). Notez que pour les couleurs, il existe des palettes prédéfinies. Dans notre cas, c'est la teinte qu'il convient de modifier étant donner que nous cherchons à exprimer une différence (associativité, sélectivité). La palette de couleurs aléatoires est donc appropriée.
 
-Le rendu peut prendre la forme suivante :
+Le rendu peut prendre la forme suivante (voir Figure ci-dessous).
 
-![Exemple de représentation du parcellaire](figures/parcelles_couleur.png){height=210px}
+
+![Exemple de représentation du parcellaire](figures/parcelles_couleur.png){height=250px}
 
 
 ## Améliorer le rendu
@@ -88,7 +89,7 @@ Pour améliorer la beauté de votre carte ;-), vous pouvez par exemple :
 - ajouter de la transparence à la couleur de chaque parcelle,
 - changer le ligne de contour du polygone,
 - changer de police.
-- choisir l'endroit où sera placé votre texte (`étiquette > position >` `forcer le point dans le polygone` par exemple)
+- choisir l'endroit où sera placé votre texte (`étiquette > position >` `forcer le` `point dans le polygone` par exemple)
 
 
 # Habiller et exporter la carte du parcellaire agricole
@@ -106,17 +107,18 @@ Une fois votre symbologie fixée, vous pouvez créer une mise en page spécifiqu
 Allez dans le menu `Projet > Nouvelle mise en page`. Pour ajouter vos données, cliquez sur l'icône `Ajouter une carte` dans le menu à gauche et cliquez ensuite sur la page.
 
 
-![Ajouter une carte](figures/composer_addMap.png)
+![Ajouter une carte](figures/composer_addMap.png){height=200px}
 
 
-Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à la page. Pour déplacer les éléments au sein du bloc de carte, utilisez le bouton `Déplacer le contenu de l'objet` (flèche dans les 4 directions).
+Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à la page. Pour déplacer les éléments au sein du bloc de carte, utilisez le bouton `Déplacer le contenu` `de l'objet` (flèche dans les 4 directions).
 
-**Modifier l'échelle et l'emprise spatiale de votre carte**
+
+## Modifier l'échelle et l'emprise spatiale de votre carte
 
 Si l'échelle ou l'emprise spatiale de votre carte n'est pas satifaisante (trop grande ou trop petite) vous pouvez les modifier de plusieurs manières :
 
 - soit **manuellement** en modifiant les paramètres `Échelle` (dans `Propriétés principales`) et `Emprise` ;
-- soit **automatiquement** en *copiant* l'emprise ou l'échelle du canevas principale à l'aide des boutons  `Régler l'emprise de la carte pour qu'elle corresponde à l'emprise du canevas principal` et `Régler l'emprise de la carte pour qu'elle corresponde à l'emprise du canevas principal` (voir figure ci-dessous). Vous pouvez ainsi régler facilement l'emprise et l'échelle souhaitée sur la fenêtre principale de QGIS et ensuite la *copier*.
+- soit **automatiquement** en *copiant* l'emprise ou l'échelle du canevas principale à l'aide des boutons  `Régler l'emprise de la carte pour qu elle corresponde` `à l'emprise du canevas principal` et `Régler l'emprise de la carte pour` `qu elle corresponde à l'emprise` `du canevas principal` (voir figure ci-dessous). Vous pouvez ainsi régler facilement l'emprise et l'échelle souhaitée sur la fenêtre principale de QGIS et ensuite la *copier*.
 
 
 ![Étendue de la carte QGIS](figures/composer_mapExtent.png)
@@ -151,7 +153,7 @@ Pour lier des données entre elles, il faut d'abord identifier un champs (colonn
 
 Une fois la colonne commune identifiée entre le fichier parcelle et le fichier `.csv`, appliquez la jointure. Ensuite, ouvrez la table attributaire du fichier `parcelles` et vérifiez qu'il contient bien une nouvelle colonne correctement remplie (l'assolement ou le rendement).
 
-**ASTUCE :** ici, l'ordre des jointures est importante. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez maintenant réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne rendement est maintenant présente dans la table attributaire de la couche `parcelles_borret`.
+**ASTUCE :** ici, l'ordre des jointures est importante. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez alors réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous constaterez qu'une colonne rendement est également ajoutée à la table attributaire de la couche `parcelles_borret`.
 
 
 ![Schéma jointure](figures/schema_jointure.png)
@@ -164,7 +166,7 @@ Les jointures sont en fait un lien entre votre fichier vectoriel `.gpkg` et les 
 
 # Cartographier le rendement
 
-Réalisez une carte *choroplèthe* qui représente sous la forme d'un aplat de couleur le rendement (en qt/ha). Pour cela, choisissez une symbologie en mode `Gradué`. Les valeurs de rendement seront discrétisées en un certain nombre de classes (seuils naturels de Jenks) et la palette de couleur impliquera une variation de la *valeur* pour une teinte choisie (ex. du vert clair au vert foncé). De cette façon, on perçoit visuellement un ordre entre les parcelles du point de vue de leur rendement (sachant que cette différence est uniquement liée ici au type de culture).
+Réalisez une carte *choroplèthe* qui représente sous la forme d'un aplat de couleur le rendement (en qt/ha). Pour cela, choisissez une symbologie en mode `Gradué`. Les valeurs de rendement seront discrétisées en un certain nombre de classes (intervalles égaux) et la palette de couleur impliquera une variation de la *valeur* pour une teinte choisie (ex. du vert clair au vert foncé). De cette façon, on perçoit visuellement un ordre entre les parcelles du point de vue de leur rendement (sachant que cette différence est uniquement liée ici au type de culture).
 
 
 # Cartographier la production totale par parcelle
@@ -191,7 +193,7 @@ $area/10000 * "rendement"
 ![Calculatrice de champ](figures/ajout_champ_production.png)
 
 
-:warning: Dans le cas présenté, la colonne contenant le rendement (production à l'hectare) par type de culture s'appelle *"rendement"*. Pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs`.
+:warning: Dans le cas présenté, la colonne contenant le rendement (production à l'hectare) par type de culture s'appelle *"rendement"*. Pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et` `valeurs`.
 
 `$area`, dans la partie `Géométrie`, représente une fonction qui permet de calculer la surface du polygone (en tenant compte de l'ellipsoïde), selon l'unité de mesure de la projection utilisée. Comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre (ou mètre carré pour des surfaces). Donc, pour passer en hectares, nous divisons la surface en m2 par 10 000 que nous multiplions aussi par le rendement pour obtenir la production totale.
 
@@ -237,12 +239,13 @@ Vous pouvez à nouveau faire une carte en combinant à la fois l'information pon
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
 
 
-**ASTUCE** : Vous pourrez remarquer que la légende affichée dans votre composeur s'actualise en fonction des couches que vous affichez dans la fenêtre principale de QGIS. Ce peut être un comportement souhaitable, mais également indésirable.
+**ASTUCE** : Vous pourrez remarquer que la légende affichée dans votre composeur s'actualise en fonction des couches que vous affichez dans la fenêtre principale de QGIS. Comportement souhaitable ou indésirable.
 
 Pour **supprimer un élément de la légende** vous pouvez :
 
-- simplement décocher cet élement dans la fenêtre principale de QGIS ;
-- Décocher la mis à jour automatique des `Élements de légende` dans les `propriétés de l'objet` (voir figure ci-dessous). Vous pourrez ensuite supprimer/ajouter des éléments de la légende.
+- Décocher cet élement dans la fenêtre principale de QGIS ;
+- Décocher la mis à jour automatique des `Élements de légende` dans les `propriétés` `de l'objet` (voir figure ci-dessous). Vous pourrez ensuite supprimer/ajouter des éléments de la légende.
+
 
 ![Modification des élements de légende](figures/modification_legende.png)
 
@@ -257,7 +260,7 @@ Dans **le composeur**, commencez par `Verrouiller les couches` de votre carte de
 
 ![Vérouiller une couche](figures/verrouiller_couche.png)
 
-Maintenant que vous avez vérouillé votre carte principale, dans la **fenêtre générale de QGIS** (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
+Après verouillage de votre carte principale, dans la **fenêtre générale de QGIS** (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
 
 Dans le **composeur de mise en page**, ajoutez une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale. Il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page).
 
@@ -297,4 +300,4 @@ Votre atlas sera donc composé de 10 cartes, dont l'une sera du style :
 
 ![Exemple de l'atlas de la parcelle n3](figures/map_atlas.png)
 
-TODO : ajouter, enlever des élements de la légende
+
