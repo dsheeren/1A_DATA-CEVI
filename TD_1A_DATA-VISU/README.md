@@ -124,7 +124,9 @@ Si l'échelle ou l'emprise spatiale de votre carte n'est pas satifaisante (trop 
 ![Étendue de la carte QGIS](figures/composer_mapExtent.png)
 
 
-A présent, vous pouvez ajouter les différents éléments d'habillage que vous trouverez dans la barre d'outils `Boîte à outils`. Vous trouverez une illustration ci-dessous (même si la carte en elle-même présente peu d'intérêt ici) :
+A présent, vous pouvez ajouter les différents éléments d'habillage que vous trouverez dans la barre d'outils `Boîte à outils`. Vous trouverez une illustration ci-dessous (même si la carte en elle-même présente peu d'intérêt ici).
+
+**ASTUCE** : pour modifier l'icone proposé par défaut pour l'orientation, sélectionnez-le, allez dans l'onglet `Propriétés de l'objet` et sélectionnez un nouvel icone depuis la rubrique `Rechercher dans les répertoires`
 
 
 ![Exemple de mise en page cartographique](figures/miseEnPage_carteV2.png){height=330px}
