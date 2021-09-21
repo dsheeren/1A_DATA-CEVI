@@ -58,7 +58,7 @@ Cette méthode ne requiert pas d'annoter la photographie aérienne sur le Geopor
 
 Pour obtenir les coordonnées X et Y du siège de l'EA, vous pouvez utiliser le Géoportail (onglet `outils > Afficher les coordonnées`). Plusieurs SRC sont proposés ce qui est intéressant. Cette source est très fiable. Une alternative est de passer par Google Maps. C'est ce que nous allons choisir ici pour l'exemple.
 
-Après avoir identifé l'EA sur Google Maps, cliquez (bouton droit) sur le lieu d'intérêt en sélectionnant ensuite l'option `Plus d'infos sur cet endroit` dans la fenêtre. Les coordonnées géographiques apparaissent en dégrés décimaux (EPSG:4326), dans l'ordre Y (latitude) et X (longitude). :warning: Cet ordre est une **source d'erreurs fréquentes** dans les imports...
+Après avoir identifé l'EA sur Google Maps, cliquez (bouton droit) sur le lieu d'intérêt. Les coordonnées géographiques apparaissent en dégrés décimaux (EPSG:4326), dans l'ordre Y (latitude) et X (longitude). En cliquant dessus, vous pouvez les copiers dans le presse-papiers. :warning: Cet ordre est une **source d'erreurs fréquentes** dans les imports...
 
 ![Obtenir les coordonnées Y et X dans Google Maps](figures/chemin_borret_gmaps.png){height=50px}
 
@@ -131,7 +131,7 @@ Par défaut QGIS n'intègre pas des fournisseurs de tuiles (Google Maps, Bing, O
 
 1. Installer un *plug-in* dédié. Pour cela, dans le menu `Extensions > Installer`, recherchez le *plug-in* `QuickMapServices` et installez-le. Vérifiez ensuite l'installation et les données disponibles par défaut dans le menu `Internet > QuickMapServices`. Le *plug-in* donne accès à certaines sources mais pas à Google Maps ou Bings par défaut. Pour cela, il faut récupérer les autres contributions via le menu `settings` du *plug-in*, onglet `More services` et bouton `Get contributed pack`.
 
-**ASTUCE 1** : il est possible qu'un message d'erreur s'affiche lors de l'activation de l'extension. Il faut probablement fermer QGIS puis le re-ouvrir pour activer l'extension sans erreur. 
+**ASTUCE 1** : il est possible qu'un message d'erreur s'affiche lors de l'activation de l'extension. Il faut probablement fermer QGIS puis le re-ouvrir pour activer l'extension sans erreur.
 
 **ASTUCE 2** : les fonds cartographiques ne s'affichent pas pour des grandes échelles. Si rien ne s'affiche après l'import d'un fond, vérifiez votre échelle (en rouge sur la figure ci-dessous), et modifiez là le cas échéant (ou dézoomer).
 
