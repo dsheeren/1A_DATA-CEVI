@@ -93,7 +93,8 @@ Vérifiez le SRC de votre projet. A-t'il changé ? Il est probable qu'il soit re
 **ASTUCE** : Si le src n'est pas disponible dans la liste déroulante, vous pouvez le chercher en cliquant sur le bouton `Sélectionner le SRC` (en rouge sur la figure ci-dessus).
 
 Ce n'est pas encore fini ! Le point importé est en WGS-84 alors que nous souhaitons travailler en Lambert-93 (SRC du projet). Le point est quand même visible malgré ses coordonnées car QGIS procède par défaut à une reprojection "à la volée" ce qui rend l'incohérence entre les SRC couche/projet transparente pour l'utilisateur (c'est bien dommage). Il faut donc procéder à une "reprojection" de la couche contenant l'EA pour la basculer dans le bon système de référence. Pour cela, allez dans le menu `Traitement > Boîte à outils` et recherchez l'algorithme `Reprojeter une couche`.
-NB : si le menu `Traitement` n'est pas accessible, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`.
+
+:warning: : **si le menu** `Traitement` **n'est pas accessible**, allez dans : `Extensions > Installer /` `Gérer les extensions` et activez l'extension `Processing`. Parfois l'extension est déjà activée mais n'apparait pas, essayez alors de la désactiver puis de la ré-activer.
 
 Le SRC cible de la nouvelle couche projetée doit être `EPSG:2154` comme celui de votre projet. Cette couche est à enregistrer dans le format [GeoPackage](https://www.geopackage.org/) (extension `.gpkg`). Il s'agit d'un format récent, ouvert, et non propriétaire, implémenté sous forme d'une base de données SQLite. Une fois enregistrée, votre couche sera ajoutée dans QGIS. Vous pouvez alors supprimer les précédentes couches en WGS-84.
 
