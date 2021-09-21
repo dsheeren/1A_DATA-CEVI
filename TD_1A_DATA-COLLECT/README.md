@@ -200,7 +200,13 @@ Pour réduire la taille du fichier, nous allons appliquer un filtre pour ne sél
 
 ![Requête SQL pour conserver les communes de Haute-Garonne](figures/requete_sql31.png)
 
-Fermez à présent la table attributaire. Cliquez ensuite (bouton droit) sur la couche COMMUNE puis `Exporter` > `Sauvegarder les entités sélectionnées sous...` Choisissez comme `Nom de fichier` votre fichier au format `gpkg` déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches. Précisez "Communes" pour le `Nom de la couche` et vérifiez que l'option `N'enregistrer que les` `entités sélectionnées` est bien cochée. Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données `gpkg` (GeoPackage) contient bien deux couches.
+- Fermez à présent la table attributaire.
+- Cliquez ensuite (bouton droit) sur la couche COMMUNE puis `Exporter` > `Sauvegarder les entités sélectionnées sous...`
+  - Choisissez comme `Nom de fichier` votre fichier au format `gpkg` déjà créé précédemment (point relatif au siège de l'EA). Ce format peut contenir plusieurs couches.
+  - Précisez "Communes" pour le `Nom de la couche`
+  - **vérifiez que l'option** `N'enregistrer que les` `entités sélectionnées` **est bien cochée**.
+
+Une fois la sauvegarde réalisée, vous pouvez ne conserver que la nouvelle couche des communes du département 31. Au passage, vous pouvez constater dans le panneau `Explorateur` que votre base de données `gpkg` (GeoPackage) contient bien deux couches.
 
 
 ![Couche des communes (31) au format gpkg](figures/geoPackage_dpt.png)
