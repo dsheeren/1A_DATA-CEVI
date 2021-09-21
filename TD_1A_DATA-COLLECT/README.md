@@ -183,7 +183,8 @@ Enfin, modifiez l'ordre des couches et leur symbologie pour obtenir un affichage
 
 Nous allons d'abord télécharger les communes de Haute-Garonne à partir de la base de données ADMIN EXPRESS (qui remplace la base GEOFLA). Cette base contient notamment des couches de régions, départements et communes au format vecteur. Elle est accessible sur la page du [site de l'IGN](https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#admin-express) qui regroupe les données libres.
 
-Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/ADMIN-EXPRESS_2-4__SHP__FRA_L93_2020-09-15.7z)) l'édition 2020 par territoire. En cas de problème avec le ftp, vous pouvez accéder aux données sur [cette page](http://files.opendatarchives.fr/professionnels.ign.fr/). Décompressez ensuite l'archive .7z et recherchez la couche COMMUNE au format .shp (projection Lambert-93). Importez-là sous QGIS. Prenez connaissance de la représentation cartographique et du contenu de la table attributaire (clic droit sur la couche > `Ouvrir la table d'attributs`)
+Télécharger ([lien ftp](ftp://Admin_Express_ext:Dahnoh0eigheeFok@ftp3.ign.fr/ADMIN-EXPRESS_2-4__SHP__FRA_L93_2020-09-15.7z)) l'édition 2020 par territoire. En cas de problème avec le ftp, vous pouvez accéder aux données sur [cette page](http://files.opendatarchives.fr/professionnels.ign.fr/adminexpress/) (téléchargez l'archive `ADMIN-EXPRESS_2-4__SHP__FRA_L93_2020-09-15.7z`, le téléchargement peut prendre un peu de temps).
+Décompressez ensuite l'archive .7z et recherchez la couche COMMUNE au format .shp (projection Lambert-93). Importez-là sous QGIS. Prenez connaissance de la représentation cartographique et du contenu de la table attributaire (clic droit sur la couche > `Ouvrir la table d'attributs`)
 
 **ASTUCE :** Il est possible que vous ne puissiez pas dé-zipper l'archive téléchargée. Si c'est le cas, téléchargez l'utilitaire 7-zip sur le site https://www.7-zip.fr/.
 
