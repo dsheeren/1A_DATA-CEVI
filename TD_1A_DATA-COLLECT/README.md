@@ -153,8 +153,8 @@ Dans le panneau `Explorateur`, vous aurez désormais accès à des dizaines de f
 
 L'IGN a également mis en place une liste de *Geoservices*. On peut ainsi accéder à une partie des données du Geoportail via les URL suivantes :
 
-- [https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities](https://wxs.ign.fr/essentiels/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities) (pour les ressources images)
-- [https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities](https://wxs.ign.fr/essentiels/geoportail/wfs?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities) (pour les ressources vecteur)
+1. [https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities](https://wxs.ign.fr/essentiels/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities) (pour les ressources images)
+2. [https://wxs.ign.fr/choisirgeoportail/geoportail/wfs?SERVICE=WFS&REQUEST=GetCapabilities](https://wxs.ign.fr/essentiels/geoportail/wfs?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities) (pour les ressources vecteur)
 
 Le WMTS est un [service d'images tuilées](https://geoservices.ign.fr/documentation/geoservices/wmts.html) (Web Map Tile Service). Il contient dans son adresse une clé (= "choisirgeoportail"), définie par l'IGN. Cette clé ne nécessite pas la création d'un compte au préalable. Elle donne directement accès à certaines ressources comme les photographies aériennes, pour un test. Reportez-vous à la [documentation](https://geoservices.ign.fr/documentation/services-acces.html) des *Geoservices* de l'IGN pour davantage de détail.
 
@@ -162,7 +162,17 @@ Pour configurer ce service sous QGIS, sélectionnez `WMS/WMTS` dans le panneau `
 
 ![Flux WMTS du Geoportail](figures/wmts_ign.png)
 
-Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`. Une illustration après ajout et changement de symbologie est présentée ci-dessous.
+Pour les ressources vecteur (parcelles cadastrales issues de la BDParcellaire, bâtiments issus de la BDTopo), c'est la même démarche mais depuis l'option `WFS` du panneau `Explorateur`.
+
+:warning: : vous l'aurez compris, les ressources que vous affichez dans QGIS sont téléchargées en direct à chaque fois que vous changez d'échelle ou d'emprise spatiale. **Attention à avoir une emprise spatiale et une échelle adéquate lorsque vous ajoutez des fonds de cartes**.
+
+Une fois configuré les deux flux, ajoutez les ressources suivantes :
+
+- `BDTOPO_V3:batiment.title` ;
+- `CADASTRALPARCELS.PARCELLAIRE_EXPRESS:parcelle.title`
+- `Photographies aériennes`.
+
+Enfin, modifiez l'ordre des couches et leur symbologie pour obtenir un affichage comme celui présenté ci-dessous.
 
 ![Exploitation agricole avec bâtiments et parcelles cadastrales](figures/EA_parcellaireCad.png)
 
