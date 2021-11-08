@@ -46,14 +46,14 @@ En plus du parcellaire agricole, 2 fichiers de type `.csv` sont fournis. Ils con
  - `assolement_2018.csv` : il précise les cultures réalisées sur chacune des parcelles pour une saison culturale de 2018
  - `rendement.csv` : il informe sur le rendement moyen de chacune des cultures (en qt/ha)
 
-Chargez la couche `parcelles_borret.gpkg` dans votre projet. Prenez connaissance du contenu de sa table attributaire (`clic droit sur la couche >` `ouvrir la table d'attributs`). Deux champs dans cette table sont présents : `fid` et `id_parcelle`.
+Décompressez le dossier `data.zip`. Chargez ensuite la couche `parcelles_borret.gpkg` dans votre projet. Prenez connaissance du contenu de sa table attributaire (clic droit sur la couche > `ouvrir la table d'attributs`). Deux champs dans cette table sont présents : `fid` et `id_parcelle`.
 
 
 ## Afficher une étiquette
 
 Affichez dans un premier temps l'identifiant de chaque parcelle sous la forme d'étiquette : `clic droit > Propriétés > Etiquettes`. N'hésitez pas à changer la police de l'étiquette ou d'autres propriétés, pour mieux faire ressortir l'identifiant.
 
-Si vous souhaitez afficher un texte en plus de la valeur d'un champ, vous pouvez le faire à travers une **concaténation** de deux chaînes de caractères. Pour cela, calculez une nouvelle expression avec l'outil correspondant (bouton à droite de la valeur de l'étiquette). Insérez l'expression suivante :
+Si vous souhaitez afficher un texte en plus de la valeur d'un champ, vous pouvez le faire à travers une **concaténation** de deux chaînes de caractères. Pour cela, calculez une nouvelle expression avec l'outil correspondant (bouton - symbole Epsilon - à droite de la valeur de l'étiquette). Insérez l'expression suivante :
 
 ```
 concat('Parcelle n',"id_parcelle")
@@ -87,7 +87,7 @@ Le rendu peut prendre la forme suivante (voir Figure ci-dessous).
 Pour améliorer la beauté de votre carte ;-), vous pouvez par exemple :
 
 - ajouter de la transparence à la couleur de chaque parcelle,
-- changer le ligne de contour du polygone,
+- changer la ligne de contour du polygone,
 - changer de police.
 - choisir l'endroit où sera placé votre texte (`étiquette > position >` `forcer le` `point dans le polygone` par exemple)
 
@@ -117,8 +117,8 @@ Vous pouvez modifier la taille du bloc de la carte (emprise) pour l'adapter à l
 
 Si l'échelle ou l'emprise spatiale de votre carte n'est pas satifaisante (trop grande ou trop petite) vous pouvez les modifier de plusieurs manières :
 
-- soit **manuellement** en modifiant les paramètres `Échelle` (dans `Propriétés principales`) et `Emprise` ;
-- soit **automatiquement** en *copiant* l'emprise ou l'échelle du canevas principale à l'aide des boutons  `Régler l'emprise de la carte pour qu elle corresponde` `à l'emprise du canevas principal` et `Régler l'emprise de la carte pour` `qu elle corresponde à l'emprise` `du canevas principal` (voir figure ci-dessous). Vous pouvez ainsi régler facilement l'emprise et l'échelle souhaitée sur la fenêtre principale de QGIS et ensuite la *copier*.
+- soit **manuellement** en modifiant les paramètres `Échelle` et `Emprise` (dans l'onglet `Propriétés de l'objet` après sélection du bloc puis, `Propriétés principales`) ;
+- soit **automatiquement** en *copiant* l'emprise ou l'échelle du canevas principal (i.e. celle de la fenêtre principale de QGIS) à l'aide des boutons `Régler l emprise` `de la carte` `pour qu elle corresponde` `à l'emprise du` `canevas principal` (voir figure ci-dessous). Testez en zoomant d'abord sur une parcelle depuis la fenêtre principale de QGIS puis en *copiant* le canevas depuis la fenêtre de mise en page, comme expliqué. 
 
 
 ![Étendue de la carte QGIS](figures/composer_mapExtent.png)
@@ -140,9 +140,9 @@ N'oubliez pas de sauvegarder votre projet qui contiendra désormais votre premi�
 
 # Ajouter l'assolement et la production de l'année 2018
 
-Grâce au fichier `rendement.csv`, nous connaissons la rendement en quintaux/ha pour chaque type de culture.
+Grâce au fichier `rendement.csv` (disponible dans le dossier `data` téléchargé au début), nous connaissons la rendement en quintaux/ha pour chaque type de culture. Prenez connaissance de son contenu.
 
-Il faut donc désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main !
+Il faut désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main !
 
 Importez vos fichiers `.csv` directement dans QGIS (`Couche > Ajouter une couche >` `Ajouter une couche de texte délimité`). Sélectionnez votre fichier et cochez la case `Détecter les types de champs` pour que QGIS traite bien les nombres comme une colonne de type numérique et non de type texte. Ces fichiers `.csv` n'ont pas de géométrie (pas de coordonnées X et Y pour en générer). Il faudra donc aussi cocher l'option `Pas de géométrie` dans la partie `Définition de la géométrie`.
 
@@ -155,7 +155,7 @@ Pour lier des données entre elles, il faut d'abord identifier un champs (colonn
 
 Une fois la colonne commune identifiée entre le fichier parcelle et le fichier `.csv`, appliquez la jointure. Ensuite, ouvrez la table attributaire du fichier `parcelles` et vérifiez qu'il contient bien une nouvelle colonne correctement remplie (l'assolement ou le rendement).
 
-**ASTUCE :** ici, l'ordre des jointures est importante. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez alors réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous constaterez qu'une colonne rendement est également ajoutée à la table attributaire de la couche `parcelles_borret`.
+**ASTUCE :** ici, l'ordre des jointures est important. Il faut d'abord joindre la table `assolement_2018` à la couche `parcelles_borret`. Vous pourrez constater qu'une colonne assolement (ou type) est maintenant présente dans la table attributaire de la couche `parcelles_borret`. Vous pouvez alors réaliser la deuxième jointure : joindre la table `rendement` à la couche `parcelles_borret`. Vous constaterez qu'une colonne rendement est également ajoutée à la table attributaire de la couche `parcelles_borret`.
 
 
 ![Schéma jointure](figures/schema_jointure.png)
@@ -175,7 +175,7 @@ Réalisez une carte *choroplèthe* qui représente sous la forme d'un aplat de c
 
 A présent, vous allez réaliser une nouvelle carte qui montre la production totale par parcelle. Connaissant le rendement de chaque culture, cette production totale peut être calculée en multipliant la valeur du rendement par la surface des parcelles.
 
-Pour réaliser cette carte correctement, une représentation par symbole proportionnel à la production (variable quantitative absolue) est la plus appropriée. C'est en effet une variation de quantité qu'il convient de faire apparaître ici en jouant sur la *taille* des symboles. Nous allons également passer en mode d'implantation ponctuelle pour rendre la représentation indépendante de la surface des polygones.
+Pour réaliser cette carte correctement, une représentation par symbole proportionnel à la production (variable quantitative absolue) est la plus appropriée. C'est en effet une variation de quantité qu'il convient de faire apparaître ici en jouant sur la *taille* des symboles. Nous allons également passer en mode d'implantation ponctuelle pour rendre la représentation indépendante de la surface des polygones. La démarche est détaillée ci-dessous.
 
 
 ## Créer un champ et calculer la production totale
@@ -195,9 +195,11 @@ $area/10000 * "rendement"
 ![Calculatrice de champ](figures/ajout_champ_production.png)
 
 
-:warning: Dans le cas présenté, la colonne contenant le rendement (production à l'hectare) par type de culture s'appelle *"rendement"*. Pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et` `valeurs`.
+:warning: Dans le cas présenté, la colonne contenant le rendement (production à l'hectare) par type de culture s'appelle *rendement*. Pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne *rendement* dans la partie `Champs et valeurs`.
 
-`$area`, dans la partie `Géométrie`, représente une fonction qui permet de calculer la surface du polygone (en tenant compte de l'ellipsoïde), selon l'unité de mesure de la projection utilisée. Comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre (ou mètre carré pour des surfaces). Donc, pour passer en hectares, nous divisons la surface en m2 par 10 000 que nous multiplions aussi par le rendement pour obtenir la production totale.
+La syntaxe `$area`, dans la partie `Géométrie`, représente une fonction qui permet de calculer la surface du polygone (en tenant compte de l'ellipsoïde), selon l'unité de mesure de la projection utilisée. Comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre (ou mètre carré pour des surfaces). Donc, pour passer en hectares, nous divisons la surface en m2 par 10 000 que nous multiplions par le rendement pour obtenir la production totale.
+
+**Remarque** : si vous souhaitez réduire le nombre de décimales d'un champ, vous pouvez utiliser l'outil `Refactoriser les champs` accessible via la boite à outils de traitement dans `Table vecteur`. 
 
 
 ## Générer le centroïde des polygones
@@ -210,10 +212,12 @@ Une fois la production totale calculée, nous pouvons générer les centroïdes 
 
 Vous pouvez afficher plusieurs informations dans une étiquette comme le type d'assolement, sauter une ligne, et la production totale de la parcelle. Pour cela, on va concatener plusieurs chaînes de caractères en insérant un `\n` qui signifie un saut de ligne.
 
-Dans l'étiquette, saisir l'expression suivante :
+Dans l'étiquette des centroïdes, saisir l'expression suivante :
 ```
 concat("assolement_2018_type",'\n', "prod_totale",'qt')
 ```
+
+:warning: Vos noms de champs sont peut-être différents. Adaptez l'expression en conséquence.
 
 Si le nombre de décimales est trop important, vous pouvez rajouter la fonction `round` dans l'expression de l'étiquette qui arrondi un champ au nombre de décimales indiqué (dont la valeur peut être 0). Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale par la production à l'ha (soit le rendement) et afficher une étiquette sous la forme : `Maïs : 89qt/ha`. Rappelez-vous de la différence entre les simples et les doubles guillemets... D'autres options existent (voir [aide](https://docs.qgis.org/3.10/fr/docs/user_manual/style_library/label_settings.html)).
 
@@ -227,7 +231,7 @@ Ouvrez la fenêtre `Symbologie` de la couche des centroïdes. Depuis le bouton �
 
 ![Symbologie du symbole ponctuel](figures/taille_fonction_champ_v2.png)
 
-Dans cette fenêtre, vous pouvez paramétrer la taille du symbole de façon proportionnelle à la valeur d'un champ. Dans notre cas, le champ `Source` à préciser est la production totale. Recalculer les valeurs min/max de ce champ à l'aide du bouton situé à droite. Arrondissez ensuite ces valeurs comme précisé dans l'illustration. A chacune de ces valeurs de production correspondent une taille pour le symbole de `Sortie` (avec méthode de calcul = surface). Les valeurs intermédiaires sont estimées par interpolation.
+Dans cette fenêtre, vous pouvez paramétrer la taille du symbole de façon proportionnelle à la valeur d'un champ. Dans notre cas, le champ `Source` à préciser est la production totale. Recalculer les valeurs min/max (plage de valeurs) de ce champ à l'aide du bouton avec les flèches situé à droite. Arrondissez ensuite ces valeurs comme précisé dans l'illustration. A chacune de ces valeurs de production correspondent une taille pour le symbole de `Sortie` (avec méthode de calcul = surface). Les valeurs intermédiaires sont estimées par interpolation.
 
 ![Paramétrage de la taille des cercles proportionnels](figures/param_cercles.png)
 
@@ -236,60 +240,57 @@ A présent, il faut générer la légende des cercles proportionnels. Pour cela,
 ![Légende des cercles proportionnels](figures/legend_propor.png)
 
 
-Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous). Ne vous étonnez pas si le rendu des cercles proportionnels dans la carte est peu satisfaisant. Il s'agit du [bug](https://github.com/qgis/QGIS/issues/36765) connu de la version 3.10.5 de QGIS...
+Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (iproduction totale de la parcelle) avec le rendement par parcelle selon le type de culture (exemple ci-dessous un peu différent de ce que vous aurez). 
 
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
 
 
-**ASTUCE** : Vous pourrez remarquer que la légende affichée dans votre composeur s'actualise en fonction des couches que vous affichez dans la fenêtre principale de QGIS. Comportement souhaitable ou indésirable.
+**ASTUCE** : Vous pourrez remarquer que la légende affichée dans votre composeur de mise en page s'actualise en fonction des couches que vous affichez dans la fenêtre principale de QGIS. Comportement souhaitable ou indésirable.
 
 Pour **supprimer un élément de la légende** vous pouvez :
 
 - Décocher cet élement dans la fenêtre principale de QGIS ;
-- Décocher la mis à jour automatique des `Élements de légende` dans les `propriétés` `de l'objet` (voir figure ci-dessous). Vous pourrez ensuite supprimer/ajouter des éléments de la légende.
+- Décocher la mis à jour automatique des `Élements de légende` dans les `propriétés` `de l objet` (voir figure ci-dessous). Vous pourrez ensuite supprimer/ajouter des éléments de la légende.
 
+Ne vous étonnez pas si le rendu des cercles proportionnels dans la carte est peu satisfaisant. Il s'agit du [bug](https://github.com/qgis/QGIS/issues/36765) connu de la version 3.10.5 et suivantes de QGIS...
 
 ![Modification des élements de légende](figures/modification_legende.png)
 
 
 
-
 ## Ajouter une carte de localisation de la zone d'étude
 
-Pour avoir un style différent de votre carte principale (celle des parcelles) il faudra faire des allers-retours entre le **composeur de mise en page** et la **fenêtre générale de QGIS**.
+Nous allons rajouter une seconde carte dans la mise en page permettant de localiser la zone d'étude. Pour cela, étant donné que par défaut, la carte affichée dans le composeur de mise en page dépend des couches affichées dans l'application principale de QGIS, nous allons devoir verrouiller la carte initiale. 
 
-Dans **le composeur**, commencez par `Verrouiller les couches` de votre carte de principale (dans l'onglet `Propriétés de l'objet`). Ainsi, quand vous allez rajouter un fond de carte dans **le canevas principal de QGIS** , votre carte principale ne se mettra pas à jour et gardera uniquement l'ancienne configuration.
+Ainsi, dans **le composeur** de mise en page, commencez par `Verrouiller les couches` de votre carte de principale (dans l'onglet `Propriétés de l'objet` - voir la figure). Ainsi, quand vous allez rajouter un fond de carte dans **le canevas principal de QGIS** , votre carte principale ne se mettra pas à jour et gardera l'ancienne configuration.
 
 ![Vérouiller une couche](figures/verrouiller_couche.png)
 
-Après verouillage de votre carte principale, dans la **fenêtre générale de QGIS** (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM).
+Après verouillage de votre carte principale, dans la **fenêtre générale de QGIS** (hors composeur de mise en page), ajoutez un fond de carte de type OpenStreetMap (OSM). Choisissez une échelle permettant d'affichez des villes importantes pour aider à la localisaton. 
 
-Dans le **composeur de mise en page**, ajoutez une petite carte (OSM) servant à localiser la zone d'étude sur votre carte principale. Il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page).
+Revenez dans le **composeur de mise en page** et ajoutez une nouvelle carte (OSM) à la mise en page servant à localiser la zone d'étude sur votre carte principale. Il faut tout d'abord cliquer sur le bouton `Ajouter une nouvelle carte à la` `mise en page`, comme pour votre première carte (dans le composeur de mise en page). Adaptez ensuite la taille du cadre de cette carte sur la feuille et sélectionnez-le puis, dans `Propriétés de` `l'objet`, allez dans la partie `Aperçu`. Ajoutez votre première carte (celle contenant vos parcelles) comme cadre de façon à la localiser.
 
-Sélectionnez ensuite cette nouvelle carte puis, dans `Propriétés de` `l'objet`, allez dans la partie `Aperçu` et ajoutez comme cadre votre première carte (celle contenant vos parcelles).
-
-Une fois paramétrées l'échelle et l'emprise de votre deuxième carte (celle de localisation), cochez l'option `Vérouiller les couches`.
+Une fois l'échelle et l'emprise de votre deuxième carte (celle de localisation) paramétrées , cochez l'option `Vérouiller les couches` pour pouvoir à nouveau modifier votre première carte.
 
 ![Carte avec localisation de la zone d'étude en utilisant des couches différentes](figures/map_withloc.png)
 
 
+Notez que pour ce type de mise en page, il faut prévoir des allers-retours entre le **composeur de mise en page** et la **fenêtre générale de QGIS**.
+
+
 # Générer un atlas
 
-Un atlas permet de générer des cartes détaillées en utilisant un modèle identique. C'est par exemple utilisé pour préparer un document pour un relevé sur le terrain en montrant précisément chaque parcelle qui sera étudiée *in situ*.
+Un atlas permet de générer un série de cartes focalisées sur des entités choisies en utilisant un modèle de mise en page identique. C'est par exemple utilisé pour préparer un document pour un relevé sur le terrain en montrant précisément chaque parcelle qui sera étudiée *in situ*.
 
-L'objectif de l'atlas dans notre cas d'étude est de montrer pour chaque parcelle sa production totale et d'indiquer le type de culture.
+L'objectif de l'atlas dans notre exercice pédagogique est de générer autant de carte qu'il y a de parcelles de culture.
 
-Cliquez sur l'icône `Paramètres de l'atlas` du menu du composeur d'impression QGIS puis, cochez dans la fenêtre en bas à droite `Générer un atlas`. La couche de couverture est la couche pour laquelle chaque entité sera utilisée par QGIS pour générer chaque page de l'atlas. Nous choisirons ici les polygones des parcelles.
+Dans le menu `Atlas` du composeur de mise en page, sélectionnez `Paramètres de l'atlas`. Un nouvel onglet apparaît. La couche de couverture à choisir est la couche à partir de laquelle chaque entité sera utilisée par QGIS pour générer chaque page de l'atlas. Nous choisirons ici le parcellaire agricole. Cliquez ensuite sur votre carte avec l'outil `Sélectionner\Déplacer un objet`. Dans l'onglet `Propriété de l'objet`, cochez `Controlée par Atlas`. Vous pouvez désormais avoir un aperçu en cliquant sur le bouton `Aperçu de l'atlas` et faire défiler les cartes. L'atlas peut être exporté en différents formats (dont le PDF). 
 
-Cliquez ensuite sur votre carte avec l'outil `Sélectionner\Déplacer un objet` et dans `Propriété de l'objet` cochez `Controlée par Atlas`.
-
-Une fois l'atlas créé, sélectionnez votre carte principale (et pas celle de la localisation), allez dans `Propriétés des objets` et cocher la partie `Contrôlé par l'atlas`. Vous pouvez désormais demander à générer votre atlas en cliquant sur le bouton `Aperçu de l'atlas`.
 
 ![Aperçu de l'atlas](figures/generate_atlas.png){height=60px}
 
-Pour ajouter des valeurs (textuelles ou numériques) en fonction de votre parcelle (comme la production en qt), ajoutez un champ texte (icône texte sur la gauche), cochez la case `Rendu en html` puis cliquer sur `Insérer une expression...`.
+Pour ajouter des valeurs (textuelles ou numériques) en fonction de votre parcelle (comme la production en qt), ajoutez un champ texte via le bouton dédié dans la barre d'outils du composeur. Sélectionnez l'objet et allez dans l'onglet `Propriétés de l'objet`. Cochez la case `Rendu en html` puis cliquez sur `Insérer une expression...`.
 
-Ainsi, il ne sera plus obligatoire d'utiliser la fonction `concat` car chaque variable sera mise entre crochets et entre %, comme par exemple :
 
 ```
 En 2018, la parcelle n [% "id_parcelle" %] a produit
@@ -297,8 +298,8 @@ En 2018, la parcelle n [% "id_parcelle" %] a produit
 [% "prod_totale" %] qt de [% "assolement_2018_type" %]
 
 ```
-
-Votre atlas sera donc composé de 10 cartes, dont l'une sera du style :
+Ainsi, il n'est pas nécessaire d'utiliser la fonction `concat`. Chaque variable à mettre à jour dynamiquement est mise entre crochets avec des %.
+Votre atlas sera donc composé d'autant de cartes qu'il y a de parcelles. Vous trouverez une illustration ci-dessous :
 
 ![Exemple de l'atlas de la parcelle n3](figures/map_atlas.png)
 
